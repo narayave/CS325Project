@@ -1,0 +1,51 @@
+Pseudo-code
+
+-- Algorithm 1: Enumeration --
+maxSubarray(a[1,...,n])
+	for each pair(i,j) with 1<=i<=j<=n
+		compute a[i]+a[j+1]+...+a[j-1]+a[j]
+		keep max sum found so far
+	return max sum found
+
+analysis: O(n^2) pairs * O(n) time to compute each sum = O(n^3)
+	
+-- Algorithm 2: Better Enumeration --
+maxSubarray(a[1,...,n])
+	for i = 1, ...., n
+		sum = 0
+		for = i, ...., n
+			sum = sum + a[j]
+			keep max sum found so far
+	return max sum found
+
+analysis: O(n) i-iterations * O(n) j-iterations * O(1) time to update sum = O(n^2)
+
+
+-- Algorithm 3: Divide & Conquer --
+maxSubarray_prefix(a[1,...,n])
+	max = a[0]
+	sum = 0
+	for i in a
+		sum = sum + i
+			if sum > max
+				max = sum
+	return max
+	
+maxSubarray_suffix(a[1,...,n])
+-- TODO --
+could this just be reversed, then call the prefix function? I wonder....
+
+maxSubarray(a[1,...,n])
+	len = length[a]
+	p = a[len/2]
+	s = a[len/2 of second half of array] -- not sure of the syntax in python
+	first = maxSubarray(p)
+	last = maxSubarray(s)
+	pre = maxSubarray_prefix(p)
+	suf = maxSubarray_suffix(s)
+	center = pre + sub
+	return array of maximum of concatenated arrays (pre + center + sub)
+
+
+-- Algorithm 4: Linear-time --
+-- TODO --
