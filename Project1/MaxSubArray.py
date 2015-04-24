@@ -5,11 +5,32 @@ import string
 import time
 import csv
 
-def Alg1():
+def Alg1(testArray):
 	print 'This is algorithm 1\n'
+	max = testArray[0]
 
-def Alg2():
+	for i in range(0, len(testArray)):
+		for j in range(i,len(testArray)):
+			sum = 0
+			for x in range(i,j):
+				sum = sum + testArray[x]
+			if sum > max:
+				max = sum
+	print max
+	return max
+
+
+def Alg2(testArray):
 	print 'This is algorithm 2\n'
+	max = 0
+	for i in range(0,len(testArray)):
+		sum = 0
+		for j in range(i,len(testArray)):
+			sum = sum + testArray[j]
+			if sum > max:
+				max = sum
+	print max
+	return max
 
 def Alg3(testArray):
 	print 'This is algorithm 3'
@@ -35,7 +56,7 @@ def Alg3Helper(testArray):
 	print 'Max is ' + str(max) + '\n'
 	return max
 
-def Alg4():
+def Alg4(testArray):
 	print 'This is algorithm 4\n'
 
 
@@ -57,12 +78,12 @@ if __name__ == '__main__':
 	
 	
 	# Algorithm 1 Enumeration method
-	Alg1()
+	Alg1(testArray)
 	# Algorithm 2 Better Enumeration method
-	Alg2()
+	Alg2(testArray)
 	# Algorithm 3 Divide and Conquer
-	Alg3(testArray)
+	#Alg3(testArray)
 	# Algorithm 4 Linear-time
-	Alg4()
+	Alg4(testArray)
 
 	print 'Finally done.'

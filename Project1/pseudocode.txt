@@ -2,9 +2,13 @@ Pseudo-code
 
 -- Algorithm 1: Enumeration --
 maxSubarray(a[1,...,n])
-	for each pair(i,j) with 1<=i<=j<=n
-		compute a[i]+a[j+1]+...+a[j-1]+a[j]
-		keep max sum found so far
+	max = a[0]
+	for i = [0...n]
+		for j = [i,n]
+			sum = 0
+			for each pair(i,j) with 1<=i<=j<=n
+			compute a[i]+a[j+1]+...+a[j-1]+a[j]
+			keep max sum found so far
 	return max sum found
 
 analysis: O(n^2) pairs * O(n) time to compute each sum = O(n^3)
