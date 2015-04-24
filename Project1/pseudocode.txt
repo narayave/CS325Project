@@ -44,7 +44,7 @@ maxSubarray(a[1,...,n])
 	pre = maxSubarray_prefix(p)
 	suf = maxSubarray_suffix(s)
 	center = pre + sub
-	return array of maximum of concatenated arrays (pre + center + sub)
+	return array of maximum of concatenated arrays (pre + sub + center)
 
 
 -- Algorithm 4: Linear-time --
