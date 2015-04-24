@@ -1,0 +1,88 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{anysize}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{chngpage}
+\usepackage{enumerate}
+\hypersetup{
+	colorlinks=true, 
+	linkcolor=blue, 
+	urlcolor=blue, 
+	pdfnewwindow=true, 
+	citecolor=black
+}
+\urlstyle{same}
+\linespread{1.2}
+
+\begin{document}
+
+\begin{titlepage}
+    \vspace*{4cm}
+    \begin{flushright}
+    {\huge
+        Project 1\\[5mm]
+    }
+    {\large
+        CS325 | Spring 2015
+     }
+    \end{flushright}
+\hrule
+    \begin{flushright}
+	by Group 2\\
+	Vedanth Narayanan\\
+	Jonathan Merrill\\
+	Tracie Lee\\
+    \vfill
+	\today\\
+    \end{flushright}
+\end{titlepage}
+
+\raggedright
+
+\section{Theoretical Run-time Analysis}
+
+\subsection{Algorithm 1}
+\begin{verbatim}
+%%  ENTER PSEUDO-CODE HERE %%
+\end{verbatim}
+\textbf{Asymptotic Analysis}\\
+We have $O(n^2)$ pairs * $O(n)$ time to compute each sum $= O(n^3)$.
+
+\subsection{Algorithm 2}
+\begin{verbatim}
+%%  ENTER PSEUDO-CODE HERE %%
+\end{verbatim}
+\textbf{Asymptotic Analysis}\\
+We have $O(n)$ i-iterations (outer loop) * $O(n)$ j-iterations (inner loop) * $O(n)$ for the time to update $= O(n^2)$.
+
+\subsection{Algorithm 3}
+\begin{verbatim}
+%%  ENTER PSEUDO-CODE HERE %%
+\end{verbatim}
+\textbf{Asymptotic Analysis}\\
+We have $T(n) = 2T(\frac{n}{2}) + \Theta(n)$. This falls within Case 2 of the Master Method, and therefore yields a solution of $\Theta(nlgn)$.
+
+\subsection{Algorithm 4}
+\begin{verbatim}
+%%  ENTER PSEUDO-CODE HERE %%
+\end{verbatim}
+\textbf{Asymptotic Analysis}\\
+We have $O(n)$ things to compute, therefore this takes $O(n)$ time.
+
+
+\section{Proof of Correctness: Algorithm 3}
+
+
+\section{Testing}
+
+
+\section{Experimental Analysis}
+
+
+\section{Extrapolation and interpretation}
+
+
+\end{document}
