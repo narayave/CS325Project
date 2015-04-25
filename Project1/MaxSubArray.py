@@ -5,8 +5,13 @@ import string
 import time
 import csv
 
+def PrintResults(sum, original, subarray):
+	print "Original Array: " + str(original)
+	print "Subarray:       " + str(subarray)
+	print "Max Sum:        " + str(sum)
+
 def Alg1(testArray):
-	print 'This is algorithm 1\n'
+	print 'Algorithm 1:'
 	max = testArray[0]
 	start = 0
 	end = 0
@@ -21,13 +26,12 @@ def Alg1(testArray):
 				end = j+1
 				max = sum
 
-	print testArray[start:end]
-	print max
+	PrintResults(max, testArray, testArray[start:end])
 	return max
 
 
 def Alg2(testArray):
-	print 'This is algorithm 2\n'
+	print '\nAlgorithm 2:'
 	max = 0
 	start = 0
 	end = 0
@@ -40,12 +44,11 @@ def Alg2(testArray):
 				end = j + 1
 				max = sum
 
-	print testArray[start:end]
-	print max
+	PrintResults(max, testArray, testArray[start:end])
 	return max
 
 def Alg3(testArray):
-	print 'This is algorithm 3'
+	print '\nAlgorithm 3:'
 	length = len(testArray)
 	p = testArray[0:-(length/2)]	# Essentially sets p to be the set from 0 to middle of testArray.
 	s = testArray[(length/2):length]	# Sets s to the second half of the testArray.
@@ -70,7 +73,7 @@ def Alg3HelperFunct(testArray):
 
 
 def Alg4(testArray):
-	print 'This is algorithm 4\n'
+	print '\nAlgorithm 4:'
 
 	maybeStart = 0
 	start = 0
@@ -89,8 +92,7 @@ def Alg4(testArray):
 			maybeStart = j+1
 			small = i
 
-	print testArray[start:end]
-	print sum
+	PrintResults(sum, testArray, testArray[start:end])
 	return sum
 
 
@@ -113,9 +115,6 @@ if __name__ == '__main__':
 	# text file needs to be passed in when running python code
 	with open(sys.argv[1]) as f:
 		testArray = map(int,f.read().split(','))
-
-	print testArray		# Ints properly placed in list from file
-
 
 
 	# Algorithm 1 Enumeration method
