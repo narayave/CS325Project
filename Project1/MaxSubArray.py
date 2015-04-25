@@ -45,7 +45,7 @@ def Alg3(testArray):
 	return 
 	# return array of max of concatenated arrays (pre + sub + center)
 
-def Alg3Helper(testArray):	
+def Alg3HelperFunct(testArray):	
 	max = testArray[0]
 	sum = 0
 	for i in range(0,len(testArray)):
@@ -57,7 +57,52 @@ def Alg3Helper(testArray):
 	return max
 
 def Alg4(testArray):
-	print 'This is algorithm 4\n'
+	S = [len(testArray)]
+	T = [len(testArray)]
+	S[0] = testArray[0]
+	T[0] = 0
+	max = S[0]
+	max_start = 0
+	max_end = 0
+	for i in range(1,len(testArray)):
+		if (S[i - 1] > 0):
+			S[i] = S[i-1] + testArray[i]
+			T[i] = T[i-1]
+		else:
+			S[i] = A[i]
+			T[i] = i
+
+		if (S[i] > max):
+			max_start = T[i]
+			max_end = i
+			max = S[i]
+
+	print 'Max start '+ len(max_start)
+	print 'Max end ' + len(max_end)
+
+#def Alg4(testArray):
+#	print 'This is algorithm 4\n'
+
+#	i = testArray[0]
+#	sum = testArray[0]
+#	small = Alg4Helper(0,i)
+	
+#	for j in range(2,len(testArray)):
+#		i = i + testArray[j]
+#		if (i - small) > sum:
+#			sum = (i - small)
+#		if i < small:
+#			small = i
+	
+#	print sum
+#	return sum
+
+
+#def Alg4Helper(i,j):
+#	if (i < j):
+#		return i
+#	else:
+#		return j
 
 
 if __name__ == '__main__':
