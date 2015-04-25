@@ -8,14 +8,20 @@ import csv
 def Alg1(testArray):
 	print 'This is algorithm 1\n'
 	max = testArray[0]
+	start = 0
+	end = 0
 
 	for i in range(0, len(testArray)):
 		for j in range(i,len(testArray)):
 			sum = 0
-			for x in range(i,j):
+			for x in range(i,j+1):
 				sum = sum + testArray[x]
 			if sum > max:
+				start = i
+				end = j
 				max = sum
+
+	print testArray[start:end]
 	print max
 	return max
 
@@ -23,12 +29,18 @@ def Alg1(testArray):
 def Alg2(testArray):
 	print 'This is algorithm 2\n'
 	max = 0
+	start = 0
+	end = 0
 	for i in range(0,len(testArray)):
 		sum = 0
 		for j in range(i,len(testArray)):
 			sum = sum + testArray[j]
 			if sum > max:
+				start = i
+				end = j + 1
 				max = sum
+
+	print testArray[start:end]
 	print max
 	return max
 
@@ -42,10 +54,10 @@ def Alg3(testArray):
 	pre = Alg3Helper(p)
 	suf = Alg3Helper(s)
 	center = pre + sub
-	return 
+	return
 	# return array of max of concatenated arrays (pre + sub + center)
 
-def Alg3HelperFunct(testArray):	
+def Alg3HelperFunct(testArray):
 	max = testArray[0]
 	sum = 0
 	for i in range(0,len(testArray)):
@@ -56,53 +68,53 @@ def Alg3HelperFunct(testArray):
 	print 'Max is ' + str(max) + '\n'
 	return max
 
-def Alg4(testArray):
-	S = [len(testArray)]
-	T = [len(testArray)]
-	S[0] = testArray[0]
-	T[0] = 0
-	max = S[0]
-	max_start = 0
-	max_end = 0
-	for i in range(1,len(testArray)):
-		if (S[i - 1] > 0):
-			S[i] = S[i-1] + testArray[i]
-			T[i] = T[i-1]
-		else:
-			S[i] = A[i]
-			T[i] = i
-
-		if (S[i] > max):
-			max_start = T[i]
-			max_end = i
-			max = S[i]
-
-	print 'Max start '+ len(max_start)
-	print 'Max end ' + len(max_end)
-
 #def Alg4(testArray):
-#	print 'This is algorithm 4\n'
+#	S = [len(testArray)]
+#	T = [len(testArray)]
+#	S[0] = testArray[0]
+#	T[0] = 0
+#	max = S[0]
+#	max_start = 0
+#	max_end = 0
+#	for i in range(1,len(testArray)):
+#		if (S[i - 1] > 0):
+#			S[i] = S[i-1] + testArray[i]
+#			T[i] = T[i-1]
+#		else:
+#			S[i] = A[i]
+#			T[i] = i
+#
+#		if (S[i] > max):
+#			max_start = T[i]
+#			max_end = i
+#			max = S[i]
+#
+#	print 'Max start '+ len(max_start)
+#	print 'Max end ' + len(max_end)
 
-#	i = testArray[0]
-#	sum = testArray[0]
-#	small = Alg4Helper(0,i)
-	
-#	for j in range(2,len(testArray)):
-#		i = i + testArray[j]
-#		if (i - small) > sum:
-#			sum = (i - small)
-#		if i < small:
-#			small = i
-	
-#	print sum
-#	return sum
+def Alg4(testArray):
+	print 'This is algorithm 4\n'
+
+	i = testArray[0]
+	sum = testArray[0]
+	small = Alg4Helper(0,i)
+
+	for j in range(1,len(testArray)):
+		i = i + testArray[j]
+		if (i - small) > sum:
+			sum = (i - small)
+		if i < small:
+			small = i
+
+	print sum
+	return sum
 
 
-#def Alg4Helper(i,j):
-#	if (i < j):
-#		return i
-#	else:
-#		return j
+def Alg4Helper(i,j):
+	if (i < j):
+		return i
+	else:
+		return j
 
 
 if __name__ == '__main__':
@@ -112,16 +124,16 @@ if __name__ == '__main__':
 		print 'I need a text file along with this running this program.'
 		print 'Playa, I\'m exiting now.\n'
 		sys.exit()
-		
+
 
 	# text file needs to be passed in when running python code
-	with open(sys.argv[1]) as f:	
+	with open(sys.argv[1]) as f:
 		testArray = map(int,f.read().split(','))
-	
+
 	print testArray		# Ints properly placed in list from file
 
-	
-	
+
+
 	# Algorithm 1 Enumeration method
 	Alg1(testArray)
 	# Algorithm 2 Better Enumeration method
