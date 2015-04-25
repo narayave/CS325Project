@@ -18,7 +18,7 @@ def Alg1(testArray):
 				sum = sum + testArray[x]
 			if sum > max:
 				start = i
-				end = j
+				end = j+1
 				max = sum
 
 	print testArray[start:end]
@@ -68,33 +68,13 @@ def Alg3HelperFunct(testArray):
 	print 'Max is ' + str(max) + '\n'
 	return max
 
-#def Alg4(testArray):
-#	S = [len(testArray)]
-#	T = [len(testArray)]
-#	S[0] = testArray[0]
-#	T[0] = 0
-#	max = S[0]
-#	max_start = 0
-#	max_end = 0
-#	for i in range(1,len(testArray)):
-#		if (S[i - 1] > 0):
-#			S[i] = S[i-1] + testArray[i]
-#			T[i] = T[i-1]
-#		else:
-#			S[i] = A[i]
-#			T[i] = i
-#
-#		if (S[i] > max):
-#			max_start = T[i]
-#			max_end = i
-#			max = S[i]
-#
-#	print 'Max start '+ len(max_start)
-#	print 'Max end ' + len(max_end)
 
 def Alg4(testArray):
 	print 'This is algorithm 4\n'
 
+	maybeStart = 0
+	start = 0
+	end = 0
 	i = testArray[0]
 	sum = testArray[0]
 	small = Alg4Helper(0,i)
@@ -102,10 +82,14 @@ def Alg4(testArray):
 	for j in range(1,len(testArray)):
 		i = i + testArray[j]
 		if (i - small) > sum:
+			start = maybeStart
+			end = j+1
 			sum = (i - small)
 		if i < small:
+			maybeStart = j+1
 			small = i
 
+	print testArray[start:end]
 	print sum
 	return sum
 
