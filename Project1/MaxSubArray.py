@@ -81,7 +81,8 @@ def Alg3(testArray, dude):
 		right = testArray[int(length / 2):]	# Sets s to the second half of the testArray.
 		first = Alg3(left, 0)
 		last = Alg3(right, 0)
-		center = Alg3RightHelper(left) + Alg3LeftHelper(right)
+		left.reverse()
+		center = Alg3Helper(left) + Alg3Helper(right)
 	else:
 		first = last = center = testArray[0]
 
@@ -92,7 +93,7 @@ def Alg3(testArray, dude):
 
 	return max([first, last, center])
 
-def Alg3LeftHelper(testArray):
+def Alg3Helper(testArray):
 	max = testArray[0]
 	sum = 0
 	for i in range(0, len(testArray)):
@@ -102,10 +103,6 @@ def Alg3LeftHelper(testArray):
 			max = sum
 	#print 'Max is ' + str(max) + '\n'
 	return max
-
-def Alg3RightHelper(testArray):
-	testArray.reverse()
-	return Alg3LeftHelper(testArray)
 
 
 def Alg4(testArray):
