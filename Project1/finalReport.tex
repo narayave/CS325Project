@@ -46,14 +46,24 @@
 
 \subsection{Algorithm 1}
 \begin{verbatim}
-%%  ENTER PSEUDO-CODE HERE %%
+    maxSubarray(a[1,...,n])
+        for each pair(i,j) with 1<=i<=j<=n
+            compute a[i]+a[j+1]+...+a[j-1]+a[j]
+            keep max sum found so far
+    return max sum found
 \end{verbatim}
 \textbf{Asymptotic Analysis}\\
 We have $O(n^2)$ pairs * $O(n)$ time to compute each sum $= O(n^3)$.
 
 \subsection{Algorithm 2}
 \begin{verbatim}
-%%  ENTER PSEUDO-CODE HERE %%
+    maxSubarray(a[1,...,n])
+        for i = 1, ...., n
+            sum = 0
+            for = i, ...., n
+                sum = sum + a[j]
+                keep max sum found so far
+        return max sum found
 \end{verbatim}
 \textbf{Asymptotic Analysis}\\
 We have $O(n)$ i-iterations (outer loop) * $O(n)$ j-iterations (inner loop) * $O(n)$ for the time to update $= O(n^2)$.
@@ -67,7 +77,24 @@ We have $T(n) = 2T(\frac{n}{2}) + \Theta(n)$. This falls within Case 2 of the Ma
 
 \subsection{Algorithm 4}
 \begin{verbatim}
-%%  ENTER PSEUDO-CODE HERE %%
+    maybeStart = 0
+    start = 0
+    end = 0
+    i = testArray[0]
+    sum = testArray[0]
+    small = Alg4Helper(0,i) 
+    (helper function to determine the minimum between a pair of values)
+
+    for j in range(1,len(testArray)):
+        i = i + testArray[j]
+        if (i - small) > sum:
+            start = maybeStart
+            end = j+1
+            sum = (i - small)
+        if i < small:
+            maybeStart = j+1
+            small = i
+    return (sum, testArray, testArray[start:end])
 \end{verbatim}
 \textbf{Asymptotic Analysis}\\
 We have $O(n)$ things to compute, therefore this takes $O(n)$ time.
