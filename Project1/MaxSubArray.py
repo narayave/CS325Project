@@ -73,7 +73,7 @@ def Alg2(testArray):
 	return max
 
 
-def Alg3(testArray, dude):
+def Alg3(testArray, initStartLen):
 	length = len(testArray)
 
 	if length > 1:
@@ -85,10 +85,9 @@ def Alg3(testArray, dude):
 	else:
 		first = last = center = testArray[0]
 
-	if dude == len(testArray):
+	if initStartLen == len(testArray):
 		print '\nAlgorithm 3:'
 		PrintResults(max([first, last, center]), testArray, [first, last, center])
-		#print max([first, last, center])
 
 	return max([first, last, center])
 
