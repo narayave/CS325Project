@@ -16,18 +16,25 @@ def randomNumGen(max):
 	f.write(str(list) + '\n')
 	f.close()
 
-def PrintResults(sum, original, subarray):
+def PrintResults(sum1, sum2, sum3, sum4, original, subarray):
 
 	f = open('MSS_Results.txt','a+')
 	f.write("Original Array: " + str(original) + '\n')
 	f.write("Subarray:       " + str(subarray) + '\n')
-	f.write("Max Sum:        " + str(sum) + '\n\n')
+	f.write("Sum for alg1:   " + str(sum1) + '\n')
+	f.write("Sum for alg2:   " + str(sum2) + '\n')
+	f.write("Sum for alg3:   " + str(sum3) + '\n')
+	f.write("Sum for alg4:   " + str(sum4) + '\n\n')
 	print "Original Array: " + str(original)
 	print "Subarray:       " + str(subarray)
-	print "Max Sum:        " + str(sum)
+	print "Sum for alg1:   " + str(sum1)
+	print "Sum for alg2:   " + str(sum2)
+	print "Sum for alg3:   " + str(sum3)
+	print "Sum for alg4:   " + str(sum4) + "\n"
+
 
 def Alg1(testArray):
-	print 'Algorithm 1:'
+	print 'Working on Alg1...'
 	max = testArray[0]
 	start = 0
 	end = 1
@@ -46,12 +53,11 @@ def Alg1(testArray):
 				end = j + 1
 				max = sum
 
-	PrintResults(max, testArray, testArray[start:end])
-	return max
+	return [max, testArray[start:end]]
 
 
 def Alg2(testArray):
-	print '\nAlgorithm 2:'
+	print '\nWorking on Alg2...'
 	max = testArray[0]
 	start = 0
 	end = 1
@@ -69,7 +75,6 @@ def Alg2(testArray):
 				end = j + 1
 				max = sum
 
-	PrintResults(max, testArray, testArray[start:end])
 	return max
 
 
@@ -87,9 +92,7 @@ def Alg3(testArray, initStartLen):
 		first = last = center = testArray[0]
 
 	if initStartLen == len(testArray):
-		print '\nAlgorithm 3:'
-		PrintResults(max([first, last, center]), testArray, [first, last, center])
-		#print max([first, last, center])
+		print '\nWorking on Alg3...'
 
 	return max([first, last, center])
 
@@ -106,7 +109,7 @@ def Alg3Helper(testArray):
 
 
 def Alg4(testArray):
-	print '\nAlgorithm 4:'
+	print '\nWorking on Alg4...'
 
 	if(len(testArray) == 1):
 		PrintResults(testArray[0],testArray,testArray)
@@ -132,7 +135,6 @@ def Alg4(testArray):
 			maybeStart = j + 1
 			small = i
 
-	PrintResults(sum, testArray, testArray[start:end])
 	return sum
 
 
@@ -150,7 +152,7 @@ if __name__ == '__main__':
 	foo = open('MSS_Problems.txt', 'r')
 
 	while 1:
-		
+
 		line = foo.readline()
 		if (line):
 			line = line.replace('[', '')
@@ -160,7 +162,6 @@ if __name__ == '__main__':
 			#foo.close()
 			#with open('MSS_Problems.txt') as f:
 			#	testArray = map(int,f.read().split(','))
-			print testArray
 
 			try:
 				os.remove('MSS_Results.txt')
@@ -168,26 +169,28 @@ if __name__ == '__main__':
 				pass
 
 			alg1Start = time.clock()
-			Alg1(testArray) 	# Algorithm 1 Enumeration method
+			sum1 = Alg1(testArray) 	# Algorithm 1 Enumeration method
 			alg1End = time.clock()
 			time1 = alg1End - alg1Start
 
 			alg2Start = time.clock()
-			Alg2(testArray)		# Algorithm 2 Better Enumeration method
+			sum2 = Alg2(testArray)		# Algorithm 2 Better Enumeration method
 			alg2End = time.clock()
 			time2 = alg2End - alg2Start
 
 
 			alg3Start = time.clock()
-			Alg3(testArray, len(testArray)) 	# Algorithm 3 Divide and Conquer
+			sum3 = Alg3(testArray, len(testArray)) 	# Algorithm 3 Divide and Conquer
 			alg3End = time.clock()
 			time3 = alg3End - alg3Start
 
 
 			alg4Start = time.clock()
-			Alg4(testArray)		# Algorithm 4 Linear-time
+			sum4 = Alg4(testArray)		# Algorithm 4 Linear-time
 			alg4End = time.clock()
 			time4 = alg4End - alg4Start
+
+			PrintResults(sum1[0], sum2, sum3, sum4, testArray, sum1[1])
 
 
 			f = open('MSS_Results.txt', 'a+')
@@ -198,7 +201,7 @@ if __name__ == '__main__':
 			f.write('Algorithm 4: ' + str(time4) + '\n\n\n')
 		else:
 			break
-	
+
 	f.close()
 
 	print 'Finally done.'
