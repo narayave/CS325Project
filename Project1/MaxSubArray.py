@@ -7,21 +7,21 @@ import csv
 import random
 
 def randomNumGen(max):
-	f = open('MSS_Problems.txt','w+')
+	f = open('MSS_Problems.txt','a+')
 	list = []
 	for i in range(0,max):
 		num = random.randint(-100,100)
 		list.append(num)
 
-	f.write(str(list))
+	f.write(str(list) + '\n')
 	f.close()
 
 def PrintResults(sum, original, subarray):
 
 	f = open('MSS_Results.txt','a+')
 	f.write("Original Array: " + str(original) + '\n')
-	f.write("Subarray:       " + str(subarray)+ '\n')
-	f.write("Max Sum:        " + str(sum)+ '\n\n')
+	f.write("Subarray:       " + str(subarray) + '\n')
+	f.write("Max Sum:        " + str(sum) + '\n\n')
 	print "Original Array: " + str(original)
 	print "Subarray:       " + str(subarray)
 	print "Max Sum:        " + str(sum)
@@ -39,11 +39,11 @@ def Alg1(testArray):
 	for i in range(0, len(testArray)):
 		for j in range(i,len(testArray)):
 			sum = 0
-			for x in range(i,j+1):
+			for x in range(i,j + 1):
 				sum = sum + testArray[x]
 			if sum > max:
 				start = i
-				end = j+1
+				end = j + 1
 				max = sum
 
 	PrintResults(max, testArray, testArray[start:end])
@@ -73,21 +73,22 @@ def Alg2(testArray):
 	return max
 
 
-def Alg3(testArray, initStartLen):
+def Alg3(testArray, dude):
 	length = len(testArray)
 
 	if length > 1:
-		left = testArray[:int(length/2)]	# Essentially sets p to be the set from 0 to middle of testArray.
-		right = testArray[int(length/2):]	# Sets s to the second half of the testArray.
+		left = testArray[:int(length / 2)]	# Essentially sets p to be the set from 0 to middle of testArray.
+		right = testArray[int(length / 2):]	# Sets s to the second half of the testArray.
 		first = Alg3(left, 0)
 		last = Alg3(right, 0)
 		center = Alg3RightHelper(left) + Alg3LeftHelper(right)
 	else:
 		first = last = center = testArray[0]
 
-	if initStartLen == len(testArray):
+	if dude == len(testArray):
 		print '\nAlgorithm 3:'
 		PrintResults(max([first, last, center]), testArray, [first, last, center])
+		#print max([first, last, center])
 
 	return max([first, last, center])
 
@@ -128,10 +129,10 @@ def Alg4(testArray):
 		i = i + testArray[j]
 		if (i - small) > sum:
 			start = maybeStart
-			end = j+1
+			end = j + 1
 			sum = (i - small)
 		if i < small:
-			maybeStart = j+1
+			maybeStart = j + 1
 			small = i
 
 	PrintResults(sum, testArray, testArray[start:end])
@@ -149,52 +150,58 @@ if __name__ == '__main__':
 
 	randomNumGen(int(sys.argv[1])) # length of array needs to be passed in when running python code
 
-	f = open('MSS_Problems.txt', 'r')
+	foo = open('MSS_Problems.txt', 'r')
 
-	line = f.readline()
-	line = line.replace('[', '');
-	line = line.replace(']', '');
-	testArray = line.split(',')
-	testArray = map(int, testArray)
-	f.close()
-	#with open('MSS_Problems.txt') as f:
-	#	testArray = map(int,f.read().split(','))
-	print testArray
+	while 1:
+		
+		line = foo.readline()
+		if (line):
+			line = line.replace('[', '')
+			line = line.replace(']', '')
+			testArray = line.split(',')
+			testArray = map(int, testArray)
+			#foo.close()
+			#with open('MSS_Problems.txt') as f:
+			#	testArray = map(int,f.read().split(','))
+			print testArray
 
-	try:
-	    os.remove('MSS_Results.txt')
-	except OSError:
-		pass
+			try:
+				os.remove('MSS_Results.txt')
+			except OSError:
+				pass
 
-	alg1Start = time.clock()
-	Alg1(testArray) 	# Algorithm 1 Enumeration method
-	alg1End = time.clock()
-	time1 = alg1End - alg1Start
+			alg1Start = time.clock()
+			Alg1(testArray) 	# Algorithm 1 Enumeration method
+			alg1End = time.clock()
+			time1 = alg1End - alg1Start
 
-	alg2Start = time.clock()
-	Alg2(testArray)		# Algorithm 2 Better Enumeration method
-	alg2End = time.clock()
-	time2 = alg2End - alg2Start
-
-
-	alg3Start = time.clock()
-	Alg3(testArray, len(testArray)) 	# Algorithm 3 Divide and Conquer
-	alg3End = time.clock()
-	time3 = alg3End - alg3Start
+			alg2Start = time.clock()
+			Alg2(testArray)		# Algorithm 2 Better Enumeration method
+			alg2End = time.clock()
+			time2 = alg2End - alg2Start
 
 
-	alg4Start = time.clock()
-	Alg4(testArray)		# Algorithm 4 Linear-time
-	alg4End = time.clock()
-	time4 = alg4End - alg4Start
+			alg3Start = time.clock()
+			Alg3(testArray, len(testArray)) 	# Algorithm 3 Divide and Conquer
+			alg3End = time.clock()
+			time3 = alg3End - alg3Start
 
 
-	f = open('MSS_Results.txt', 'a+')
-	f.write('\n\nTimes for n = ' + str(len(testArray))+ '\n')
-	f.write('Algorithm 1: ' + str(time1) + '\n')
-	f.write('Algorithm 2: ' + str(time2) + '\n')
-	f.write('Algorithm 3: ' + str(time3) + '\n')
-	f.write('Algorithm 4: ' + str(time4) + '\n')
+			alg4Start = time.clock()
+			Alg4(testArray)		# Algorithm 4 Linear-time
+			alg4End = time.clock()
+			time4 = alg4End - alg4Start
+
+
+			f = open('MSS_Results.txt', 'a+')
+			f.write('\n\nTimes for n = ' + str(len(testArray)) + '\n')
+			f.write('Algorithm 1: ' + str(time1) + '\n')
+			f.write('Algorithm 2: ' + str(time2) + '\n')
+			f.write('Algorithm 3: ' + str(time3) + '\n')
+			f.write('Algorithm 4: ' + str(time4) + '\n\n\n')
+		else:
+			break
+	
 	f.close()
 
 	print 'Finally done.'
