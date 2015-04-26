@@ -73,20 +73,23 @@ def Alg2(testArray):
 	return max
 
 
-def Alg3(testArray):
-	#print '\nAlgorithm 3:'
+def Alg3(testArray, dude):
 	length = len(testArray)
 
 	if length > 1:
 		left = testArray[:int(length/2)]	# Essentially sets p to be the set from 0 to middle of testArray.
 		right = testArray[int(length/2):]	# Sets s to the second half of the testArray.
-		first = Alg3(left)
-		last = Alg3(right)
+		first = Alg3(left, 0)
+		last = Alg3(right, 0)
 		center = Alg3RightHelper(left) + Alg3LeftHelper(right)
 	else:
 		first = last = center = testArray[0]
 
-	print max([first, last, center])
+	if dude == len(testArray):
+		print '\nAlgorithm 3:'
+		PrintResults(max([first, last, center]), testArray, [first, last, center])
+		#print max([first, last, center])
+
 	return max([first, last, center])
 
 def Alg3LeftHelper(testArray):
@@ -176,7 +179,7 @@ if __name__ == '__main__':
 
 
 	alg3Start = time.clock()
-	Alg3(testArray) 	# Algorithm 3 Divide and Conquer
+	Alg3(testArray, len(testArray)) 	# Algorithm 3 Divide and Conquer
 	alg3End = time.clock()
 	time3 = alg3End - alg3Start
 
