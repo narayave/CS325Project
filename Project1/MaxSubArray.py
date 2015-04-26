@@ -72,29 +72,31 @@ def Alg2(testArray):
 	PrintResults(max, testArray, testArray[start:end])
 	return max
 
+
 def Alg3(testArray):
 	print '\nAlgorithm 3:'
 	length = len(testArray)
-	p = testArray[0:-(length/2)]	# Essentially sets p to be the set from 0 to middle of testArray.
-	s = testArray[(length/2):length]	# Sets s to the second half of the testArray.
-	first = Alg3(p)
-	last = Alg3(s)
-	pre = Alg3Helper(p)
-	suf = Alg3Helper(s)
-	center = pre + sub
-	return
-	# return array of max of concatenated arrays (pre + sub + center)
+	left = testArray[:int(length/2)]	# Essentially sets p to be the set from 0 to middle of testArray.
+	right = testArray[int(length/2):]	# Sets s to the second half of the testArray.
+	first = Alg3(left)
+	last = Alg3(right)
+	center = Alg3RightHelper(left) + Alg3LeftHelper(right)
+	return max([first, last, center])
 
-def Alg3HelperFunct(testArray):
+def Alg3LeftHelper(testArray):
 	max = testArray[0]
 	sum = 0
-	for i in range(0,len(testArray)):
-		sum = sum + testArray[i]
+	for i in testarray:
+		sum += i
 		print 'Sum = ' + str(sum) + ', Max = ' + str(max)
 		if sum > max:
 			max = sum
 	print 'Max is ' + str(max) + '\n'
 	return max
+
+def Alg3RightHelper(testArray):
+	testArray.reverse()
+	return Alg3LeftHelper(testArray)
 
 
 def Alg4(testArray):
