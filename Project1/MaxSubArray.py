@@ -17,6 +17,11 @@ def randomNumGen(max):
 	f.close()
 	
 def PrintResults(sum, original, subarray):
+
+	f = open('MSS_Results.txt','a+')
+	f.write("Original Array: " + str(original) + '\n')
+	f.write("Subarray:       " + str(subarray)+ '\n')
+	f.write("Max Sum:        " + str(sum)+ '\n\n')
 	print "Original Array: " + str(original)
 	print "Subarray:       " + str(subarray)
 	print "Max Sum:        " + str(sum)
@@ -26,6 +31,10 @@ def Alg1(testArray):
 	max = testArray[0]
 	start = 0
 	end = 0
+
+	if(len(testArray) == 1):
+		PrintResults(testArray[0],testArray,testArray)
+		return testArray[0]
 
 	for i in range(0, len(testArray)):
 		for j in range(i,len(testArray)):
@@ -46,6 +55,11 @@ def Alg2(testArray):
 	max = 0
 	start = 0
 	end = 0
+	
+	if(len(testArray) == 1):
+		PrintResults(testArray[0],testArray,testArray)
+		return testArray[0]
+	
 	for i in range(0,len(testArray)):
 		sum = 0
 		for j in range(i,len(testArray)):
@@ -85,6 +99,10 @@ def Alg3HelperFunct(testArray):
 
 def Alg4(testArray):
 	print '\nAlgorithm 4:'
+
+	if(len(testArray) == 1):
+		PrintResults(testArray[0],testArray,testArray)
+		return testArray[0]
 
 	maybeStart = 0
 	start = 0
@@ -129,6 +147,11 @@ if __name__ == '__main__':
 	#with open('MSS_Problems.txt') as f:
 	#	testArray = map(int,f.read().split(','))
 	print testArray
+
+	try:
+	    os.remove('MSS_Results.txt')
+	except OSError:
+		pass
 
 	# Algorithm 1 Enumeration method
 	Alg1(testArray)
