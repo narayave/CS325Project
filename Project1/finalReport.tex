@@ -109,16 +109,15 @@ We have $O(n)$ things to compute, therefore this takes $O(n)$ time.
 We pass in either an empty array or an array consisting of 1 element. In the first case, an empty array is returned and in the second case the algorithm returns the same array that had been passed in since it is the max subarray within that array.
 
 \subsection*{Inductive Hypothesis}
-Assume that algorithm 3 correctly returns a maximum contiguous sum of elements $S$ from an array $A$ of $n > 1$ elements. If we split $A$ into 2 separate arrays, let $L$ represent the new array from the left side and let $R$ represent the new array from the right side. Then let $s_{i...j}$ represent any sequence of numbers with the largest sum that lies with in $S$. If the sum of $s_{i...j} = x$, then $max(first, last, center) \leq x$. There are then 3 possibilities:
+Assume that algorithm 3 correctly returns a maximum contiguous sum of elements $S$ from an array $A$ of $n > 1$ elements. 
+
+\subsection*{Inductive Step}
+If we split $A$ into 2 separate arrays, let $L$ represent the new array from the left side and let $R$ represent the new array from the right side. Then let $s_{i...j}$ represent any sequence of numbers with the largest sum that lies with in $S$. If the sum of $s_{i...j} = x$, then $max(first, last, center) \leq x$. There are then 3 possibilities:
 \begin{enumerate}
 \item $s_{i...j}$ lies completely within $L$. In this case, it would follow that the max subarray of $L$ is equal to x which means that $max(first, last, center) \geq first = x$. Because of this, we know that the answer returned is exactly x.
 \item $s_{i...j}$ lies completely within $R$. In this case, it would follow that the max subarray of $R$ is equal to x which means that $max(first, last, center) \geq last = x$. Because of this, we know that the answer returned is exactly x.
 \item If $s_{i...j}$ does not lie completely within $L$ or $R$, then it must start in $L$ and end in $R$. 
 \end{enumerate}
-
-\subsection*{Inductive Step}
-
-\subsection*{Termination}
 
 \section{Testing}
 
