@@ -4,7 +4,18 @@ import sys
 import string
 import time
 import csv
+import random
 
+def randomNumGen(max):
+	f = open('MSS_Problems.txt','a')
+	list = []
+	for i in range(0,max):
+		num = random.randint(-100,100)
+		list.append(num)
+	
+	f.write(str(list))
+	f.close()
+	
 def PrintResults(sum, original, subarray):
 	print "Original Array: " + str(original)
 	print "Subarray:       " + str(subarray)
@@ -23,7 +34,7 @@ def Alg1(testArray):
 				sum = sum + testArray[x]
 			if sum > max:
 				start = i
-				end = j+1
+				end = j
 				max = sum
 
 	PrintResults(max, testArray, testArray[start:end])
@@ -105,17 +116,19 @@ def Alg4Helper(i,j):
 
 if __name__ == '__main__':
 
-	#print len(sys.argv)
-	if len(sys.argv) < 2:
-		print 'I need a text file along with this running this program.'
-		print 'Playa, I\'m exiting now.\n'
-		sys.exit()
-
-
-	# text file needs to be passed in when running python code
-	with open(sys.argv[1]) as f:
-		testArray = map(int,f.read().split(','))
-
+	randomNumGen(int(sys.argv[1])) # length of array needs to be passed in when running python code
+	
+	f = open('MSS_Problems.txt', 'r')
+	
+	line = f.readline()
+	line = line.replace('[', '');
+	line = line.replace(']', '');
+	testArray = line.split(',')
+	testArray = map(int, testArray)
+	f.close()
+	#with open('MSS_Problems.txt') as f:
+	#	testArray = map(int,f.read().split(','))
+	print testArray
 
 	# Algorithm 1 Enumeration method
 	Alg1(testArray)
@@ -126,4 +139,5 @@ if __name__ == '__main__':
 	# Algorithm 4 Linear-time
 	Alg4(testArray)
 
+	os.remove('MSS_Problems.txt')		#May need to fix these
 	print 'Finally done.'
