@@ -12,10 +12,10 @@ def randomNumGen(max):
 	for i in range(0,max):
 		num = random.randint(-100,100)
 		list.append(num)
-	
+
 	f.write(str(list))
 	f.close()
-	
+
 def PrintResults(sum, original, subarray):
 
 	f = open('MSS_Results.txt','a+')
@@ -30,7 +30,7 @@ def Alg1(testArray):
 	print 'Algorithm 1:'
 	max = testArray[0]
 	start = 0
-	end = 0
+	end = 1
 
 	if(len(testArray) == 1):
 		PrintResults(testArray[0],testArray,testArray)
@@ -43,7 +43,7 @@ def Alg1(testArray):
 				sum = sum + testArray[x]
 			if sum > max:
 				start = i
-				end = j
+				end = j+1
 				max = sum
 
 	PrintResults(max, testArray, testArray[start:end])
@@ -52,14 +52,14 @@ def Alg1(testArray):
 
 def Alg2(testArray):
 	print '\nAlgorithm 2:'
-	max = 0
+	max = testArray[0]
 	start = 0
-	end = 0
-	
+	end = 1
+
 	if(len(testArray) == 1):
 		PrintResults(testArray[0],testArray,testArray)
 		return testArray[0]
-	
+
 	for i in range(0,len(testArray)):
 		sum = 0
 		for j in range(i,len(testArray)):
@@ -106,10 +106,13 @@ def Alg4(testArray):
 
 	maybeStart = 0
 	start = 0
-	end = 0
+	end = 1
 	i = testArray[0]
 	sum = testArray[0]
 	small = Alg4Helper(0,i)
+	if small < 0:
+		maybeStart = 1
+		end = 2
 
 	for j in range(1,len(testArray)):
 		i = i + testArray[j]
@@ -135,9 +138,9 @@ def Alg4Helper(i,j):
 if __name__ == '__main__':
 
 	randomNumGen(int(sys.argv[1])) # length of array needs to be passed in when running python code
-	
+
 	f = open('MSS_Problems.txt', 'r')
-	
+
 	line = f.readline()
 	line = line.replace('[', '');
 	line = line.replace(']', '');
