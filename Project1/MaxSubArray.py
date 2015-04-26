@@ -7,7 +7,7 @@ import csv
 import random
 
 def randomNumGen(max):
-	f = open('MSS_Problems.txt','a')
+	f = open('MSS_Problems.txt','w+')
 	list = []
 	for i in range(0,max):
 		num = random.randint(-100,100)
@@ -156,14 +156,35 @@ if __name__ == '__main__':
 	except OSError:
 		pass
 
-	# Algorithm 1 Enumeration method
-	Alg1(testArray)
-	# Algorithm 2 Better Enumeration method
-	Alg2(testArray)
-	# Algorithm 3 Divide and Conquer
-	#Alg3(testArray)
-	# Algorithm 4 Linear-time
-	Alg4(testArray)
+	alg1Start = time.clock()
+	Alg1(testArray) 	# Algorithm 1 Enumeration method
+	alg1End = time.clock()
+	time1 = alg1End - alg1Start
 
-	os.remove('MSS_Problems.txt')		#May need to fix these
+	alg2Start = time.clock()
+	Alg2(testArray)		# Algorithm 2 Better Enumeration method
+	alg2End = time.clock()
+	time2 = alg2End - alg2Start
+
+
+	alg3Start = time.clock()
+	#Alg3(testArray) 	# Algorithm 3 Divide and Conquer
+	alg3End = time.clock()
+	time3 = alg3End - alg3Start
+
+
+	alg4Start = time.clock()
+	Alg4(testArray)		# Algorithm 4 Linear-time
+	alg4End = time.clock()
+	time4 = alg4End - alg4Start
+
+
+	f = open('MSS_Results.txt', 'a+')
+	f.write('\n\nTimes for n = ' + str(len(testArray))+ '\n')
+	f.write('Algorithm 1: ' + str(time1) + '\n')
+	f.write('Algorithm 2: ' + str(time2) + '\n')
+	f.write('Algorithm 3: ' + str(time3) + '\n')
+	f.write('Algorithm 4: ' + str(time4) + '\n')
+	f.close()
+
 	print 'Finally done.'
