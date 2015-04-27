@@ -138,12 +138,13 @@ We pass in an array consisting of 1 element, in which case the algorithm has a c
 Assume that algorithm 3 correctly returns a maximum contiguous sum of elements when n = k elements. 
 
 \subsection*{Inductive Step}
-If we split $A$ into 2 separate arrays, let $L$ represent the new array from the left side and let $R$ represent the new array from the right side. Then let $s_{i...j}$ represent any sequence of numbers with the largest sum that lies with in $S$. If the sum of $s_{i...j} = x$, then $max(first, last, center) \leq x$. There are then 3 possibilities:
+We must prove that this algorithm correctly solves for for an array with k+1 elements. Since our algorithm finds the sum of the left-half subarray, the right-half subarray, and a subarray existing in both the left and right halves and returns the greatest of the three, we can divide this problem into 3 parts:
 \begin{enumerate}
-\item $s_{i...j}$ lies completely within $L$. In this case, it would follow that the max subarray of $L$ is equal to x which means that $max(first, last, center) \geq first = x$. Because of this, we know that the answer returned is exactly x.
-\item $s_{i...j}$ lies completely within $R$. In this case, it would follow that the max subarray of $R$ is equal to x which means that $max(first, last, center) \geq last = x$. Because of this, we know that the answer returned is exactly x.
-\item If $s_{i...j}$ does not lie completely within $L$ or $R$, then it must start in $L$ and end in $R$. 
+\item We know the sum returned from the left half is correct because we recursively call our algorithm using a value for $n < k+1$.
+\item We know the sum returned from the right half is also correct because we recursively call our algorithm using a value for $n < k+1$
+\item Finally, the case where the subarray exists in both the left and right halves. Sums are found by finding the max contiguous sum where the starting index = 0. We find the center sum by adding the max sum of the right half to the max sum of the left half reversed. By reversing the left half, we find the max sum of the left half that uses the last element in the left half subarray. We know the sum of the reversed left half is correct because we recursively call our algorithm using a value of $n < k+1$. Since both of the recursive calls used to generate the sum for the center are correct, the sum found by our algorithm for a subarray existing in the both the left and right halves is also correct. 
 \end{enumerate}
+Since all three cases are correct for n = k+1, our algorithm is correct.
 
 \section{Testing}
 \hspace{25pt}Our testing was quite thorough through out the completion of the project. The first measures taken for testing were for the correctness of our algorithms. We had written pseudo-code, and we needed to make sure that they were implemented properly. While not exactly writing unit tests, we performed manual tests. We gave the program a set list of integers, and knew what to expect as the result. The other side of our manual tests were running through the code by hand. In the beginning either we came across some indexing issues, or infinite loops, and similar issues. It was really helpful to go through by hand because it was our version of debugging, and more often than not the problems were identified and solved. In the end, we used the test cases mentioned on the project description, as well as on Canvas, and we were successfully able to pass the tests.\vspace{8pt}

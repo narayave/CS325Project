@@ -8,7 +8,6 @@ clean:
 	rm -f MSS_Results.txt
 	ls
 
-stutest.out:
-
-	python MaxSubArray.py MSS_Problems.txt > MSS_Results.txt
+MaxSubArray:
+	python MaxSubArray.py MSS_Problems.txt
 	cat MSS_Results.txt
