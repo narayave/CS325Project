@@ -132,7 +132,7 @@ We have $O(n)$ things to compute, therefore this takes $O(n)$ time.
 
 \section{Proof of Correctness: Algorithm 3}
 \subsection*{Base Case}
-We pass in either an empty array or an array consisting of 1 element. In the first case, an empty array is returned and in the second case the algorithm returns the same array that had been passed in since it is the max subarray within that array.
+We pass in an array consisting of 1 element, in which case the algorithm has a check in place for an array of length greater than one, and consequently returns the same array that had been passed in since it is the max subarray within that array.
 
 \subsection*{Inductive Hypothesis}
 Assume that algorithm 3 correctly returns a maximum contiguous sum of elements $s$ from an array $A$ of $n > 1$ elements. 
