@@ -1,0 +1,112 @@
+Original Array: [1, 3, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
+Subarray:       [8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19]
+Sum for alg1:   34
+Sum for alg2:   34
+Sum for alg3:   34
+Sum for alg4:   34
+
+Times for n = 16
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
+Subarray:       [2, 9, 8, 6, 5]
+Sum for alg1:   30
+Sum for alg2:   30
+Sum for alg3:   30
+Sum for alg4:   30
+
+Times for n = 15
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [10, -11, -1, -9, 33, -45, 23, 24, -1, -7, -8, 19]
+Subarray:       [23, 24, -1, -7, -8, 19]
+Sum for alg1:   50
+Sum for alg2:   50
+Sum for alg3:   50
+Sum for alg4:   50
+
+Times for n = 12
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
+Subarray:       [59, 26, -53, 58, 97]
+Sum for alg1:   187
+Sum for alg2:   187
+Sum for alg3:   187
+Sum for alg4:   187
+
+Times for n = 10
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [3, 2, 1, 1, -8, 1, 1, 2, 3]
+Subarray:       [3, 2, 1, 1]
+Sum for alg1:   7
+Sum for alg2:   7
+Sum for alg3:   7
+Sum for alg4:   7
+
+Times for n = 9
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [12, 99, 99, -99, -27, 0, 0, 0, -3, 10]
+Subarray:       [12, 99, 99]
+Sum for alg1:   210
+Sum for alg2:   210
+Sum for alg3:   210
+Sum for alg4:   210
+
+Times for n = 10
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+Subarray:       [4, -1, 2, 1]
+Sum for alg1:   6
+Sum for alg2:   6
+Sum for alg3:   6
+Sum for alg4:   6
+
+Times for n = 9
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
+Original Array: [-1, -3, -5]
+Subarray:       []
+Sum for alg1:   0
+Sum for alg2:   0
+Sum for alg3:   0
+Sum for alg4:   0
+
+Times for n = 3
+Alg1: 0.0
+Alg2: 0.0
+Alg3: 0.0
+Alg4: 0.0
+
+
