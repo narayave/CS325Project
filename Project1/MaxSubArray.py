@@ -16,21 +16,33 @@ def randomNumGen(max):
 	f.write(str(list) + '\n')
 	f.close()
 
-def PrintResults(sum1, sum2, sum3, sum4, original, subarray):
-
+def PrintResults(sum1, sum2, sum3, sum4, original, subarray, time1, time2, time3, time4):
 	f = open('MSS_Results.txt','a+')
-	f.write("Original Array: " + str(original) + '\n')
-	f.write("Subarray:       " + str(subarray) + '\n')
-	f.write("Sum for alg1:   " + str(sum1) + '\n')
-	f.write("Sum for alg2:   " + str(sum2) + '\n')
-	f.write("Sum for alg3:   " + str(sum3) + '\n')
-	f.write("Sum for alg4:   " + str(sum4) + '\n\n')
+	f.write("Original Array: " + str(original) + "\n")
+	f.write("Subarray:       " + str(subarray) + "\n")
+	f.write("Sum for alg1:   " + str(sum1) + "\n")
+	f.write("Sum for alg2:   " + str(sum2) + "\n")
+	f.write("Sum for alg3:   " + str(sum3) + "\n")
+	f.write("Sum for alg4:   " + str(sum4) + "\n\n")
+	f.write('Times for n = ' + str(len(testArray)) + '\n')
+	f.write('Alg1: ' + str(time1) + '\n')
+	f.write('Alg2: ' + str(time2) + '\n')
+	f.write('Alg3: ' + str(time3) + '\n')
+	f.write('Alg4: ' + str(time4) + '\n\n\n')
+
 	print "Original Array: " + str(original)
 	print "Subarray:       " + str(subarray)
 	print "Sum for alg1:   " + str(sum1)
 	print "Sum for alg2:   " + str(sum2)
 	print "Sum for alg3:   " + str(sum3)
 	print "Sum for alg4:   " + str(sum4) + "\n"
+	print 'Times for n = ' + str(len(testArray)) + '\n'
+	print 'Alg1: ' + str(time1) + '\n'
+	print 'Alg2: ' + str(time2) + '\n'
+	print 'Alg3: ' + str(time3) + '\n'
+	print 'Alg4: ' + str(time4) + '\n\n\n'
+
+
 
 
 def Alg1(testArray):
@@ -38,10 +50,6 @@ def Alg1(testArray):
 	max = testArray[0]
 	start = 0
 	end = 1
-
-	if(len(testArray) == 1):
-		PrintResults(testArray[0],testArray,testArray)
-		return testArray[0]
 
 	for i in range(0, len(testArray)):
 		for j in range(i,len(testArray)):
@@ -53,29 +61,29 @@ def Alg1(testArray):
 				end = j + 1
 				max = sum
 
-	return [max, testArray[start:end]]
+	if(max >= 0):
+		return [max, testArray[start:end]]
+	else:
+		return [0, []]
+
 
 
 def Alg2(testArray):
 	print '\nWorking on Alg2...'
-	max = testArray[0]
+	maxSum = testArray[0]
 	start = 0
 	end = 1
-
-	if(len(testArray) == 1):
-		PrintResults(testArray[0],testArray,testArray)
-		return testArray[0]
 
 	for i in range(0,len(testArray)):
 		sum = 0
 		for j in range(i,len(testArray)):
 			sum = sum + testArray[j]
-			if sum > max:
+			if sum > maxSum:
 				start = i
 				end = j + 1
-				max = sum
+				maxSum = sum
 
-	return max
+	return max(maxSum,0)
 
 
 def Alg3(testArray, initStartLen):
@@ -91,8 +99,9 @@ def Alg3(testArray, initStartLen):
 	else:
 		first = last = center = testArray[0]
 
-	if initStartLen == len(testArray):
+	if initStartLen == length:
 		print '\nWorking on Alg3...'
+		return max(max([first, last, center]), 0)
 
 	return max([first, last, center])
 
@@ -101,19 +110,13 @@ def Alg3Helper(testArray):
 	sum = 0
 	for i in range(0, len(testArray)):
 		sum += testArray[i]
-		#print 'Sum = ' + str(sum) + ', Max = ' + str(max)
 		if sum > max:
 			max = sum
-	#print 'Max is ' + str(max) + '\n'
 	return max
 
 
 def Alg4(testArray):
 	print '\nWorking on Alg4...'
-
-	if(len(testArray) == 1):
-		PrintResults(testArray[0],testArray,testArray)
-		return testArray[0]
 
 	maybeStart = 0
 	start = 0
@@ -135,7 +138,7 @@ def Alg4(testArray):
 			maybeStart = j + 1
 			small = i
 
-	return sum
+	return max(sum, 0)
 
 
 def Alg4Helper(i,j):
@@ -147,9 +150,23 @@ def Alg4Helper(i,j):
 
 if __name__ == '__main__':
 
-	randomNumGen(int(sys.argv[1])) # length of array needs to be passed in when running python code
+	try:
+		foo = open(sys.argv[1], 'r')
+	except:
+		print "Please specify a file name"
+		print "usage: python MaxSubArray.py <filename>"
+		print "\nNote: format of file must be: "
+		print "\n[a1, a2, a3, ..., an]"
+		print "[b1, b2, b3, ..., bn]"
+		print "..."
+		print "[*1, *2, *3, ..., *n]"
+		print "\n\nexiting..."
+		sys.exit()
 
-	foo = open('MSS_Problems.txt', 'r')
+	try:
+		os.remove('MSS_Results.txt')
+	except OSError:
+		pass
 
 	while 1:
 
@@ -158,15 +175,19 @@ if __name__ == '__main__':
 			line = line.replace('[', '')
 			line = line.replace(']', '')
 			testArray = line.split(',')
-			testArray = map(int, testArray)
-			#foo.close()
-			#with open('MSS_Problems.txt') as f:
-			#	testArray = map(int,f.read().split(','))
-
 			try:
-				os.remove('MSS_Results.txt')
-			except OSError:
-				pass
+				testArray = map(int, testArray)
+			except ValueError:
+				print "Invalid file format"
+				print "\nNote: format of file must be: "
+				print "\n[a1, a2, a3, ..., an]"
+				print "[b1, b2, b3, ..., bn]"
+				print "..."
+				print "[*1, *2, *3, ..., *n]"
+				print "\n\nexiting..."
+				sys.exit()
+
+
 
 			alg1Start = time.clock()
 			sum1 = Alg1(testArray) 	# Algorithm 1 Enumeration method
@@ -190,18 +211,12 @@ if __name__ == '__main__':
 			alg4End = time.clock()
 			time4 = alg4End - alg4Start
 
-			PrintResults(sum1[0], sum2, sum3, sum4, testArray, sum1[1])
+			PrintResults(sum1[0], sum2, sum3, sum4, testArray, sum1[1], time1, time2, time3, time4)
 
-
-			f = open('MSS_Results.txt', 'a+')
-			f.write('\n\nTimes for n = ' + str(len(testArray)) + '\n')
-			f.write('Algorithm 1: ' + str(time1) + '\n')
-			f.write('Algorithm 2: ' + str(time2) + '\n')
-			f.write('Algorithm 3: ' + str(time3) + '\n')
-			f.write('Algorithm 4: ' + str(time4) + '\n\n\n')
 		else:
 			break
 
-	f.close()
+	foo.close()
 
 	print 'Finally done.'
+	print "Note: These results can be found in MSS_Results.txt"
