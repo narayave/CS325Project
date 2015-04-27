@@ -146,9 +146,11 @@ If we split $A$ into 2 separate arrays, let $L$ represent the new array from the
 \end{enumerate}
 
 \section{Testing}
-\centerline{\includegraphics[width=3in]{TestTimes.png}}
-
+\hspace{25pt}Our testing was quite thorough through out the completion of the project. The first measures taken for testing were for the correctness of our algorithms. We had written pseudo-code, and we needed to make sure that they were implemented properly. While not exactly writing unit tests, we performed manual tests. We gave the program a set list of integers, and knew what to expect as the result. The other side of our manual tests were running through the code by hand. In the beginning either we came across some indexing issues, or infinite loops, and similar issues. It was really helpful to go through by hand because it was our version of debugging, and more often than not the problems were identified and solved. In the end, we used the test cases mentioned on the project description, as well as on Canvas, and we were successfully able to pass the tests.\\
+\hspace{25pt}We needed to perform some sort of "regression testing" next. This was to check the performance of our algorithms and the amount of time it took for them to run. We ended up writing a little function that generated random numbers, put them in a list, and wrote the list into the MSS\_Problems.txt file. This function still exists in our script, if it need be checked. We always wanted to write the MSS\_Problems.txt file, so we had our script accept integer values that defined the number of n's. Accordingly, we created a Makefile from where we were able to call our script with different arguments and append the results to MSS\_Results.txt. The first arguments were ones that were mentioned in the project description, but we went beyond that. For the first 2 algorithms, we found out their limits, and at that point, we decided to comment out the function calls for them, and then continue the tests for the other 2 algorithms. The last n case for Algorithm 1 was 2000. The last n case for Algorithm 2 was 30000. Both Algorithm 3 and 4 ran till n was 1000000. All this testing was done on the Flip servers, for consistent results.\\
+\centerline{\includegraphics[width=3.5in]{TestTimes.png}}
 \pagebreak
+
 \section{Experimental Analysis}
 \centerline{\includegraphics[width=7in]{LogPlot.png}}
 

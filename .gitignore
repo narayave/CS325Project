@@ -189,7 +189,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 Project1/MaxSubArray/*
-*.aux
-*.synctex.gz
-*.log
-*.out
+Project1/*.aux
+Project1/*.synctex.gz
+Project1/*.log
+Project1/*.out
