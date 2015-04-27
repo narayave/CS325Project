@@ -146,14 +146,25 @@ If we split $A$ into 2 separate arrays, let $L$ represent the new array from the
 \end{enumerate}
 
 \section{Testing}
+\centerline{\includegraphics[width=3in]{TestTimes.png}}
 
-
+\pagebreak
 \section{Experimental Analysis}
-%\centerline{\includegraphics[width=4.5in]{maxwell.eps}}
+\centerline{\includegraphics[width=7in]{LogPlot.png}}
 
-
-
-\section{Extrapolation and interpretation}
-
+\section{Extrapolation and Interpretation}
+In general, our test data confirmed that our asymptotic analysis for each algorithm was very close. Algorithm was predicted to be $O(n^3)$, algorithm 2 $O(n^2)$, algorithm 3 $O(nlgn)$ and algorithm 4 $O(n)$, and all 4 algorithm plots have curves that are roughly equivalent.\vspace{8pt}
+\\
+To find the largest instance that can be solved within an hour for each algorithm, we had to do some rough estimating. Assuming that algorithm 1 is indeed $O(n^3)$, we used our largest testing trial for algorithm 1 ($n=2000$; completing in 109 seconds) to find the approximate number of operations the computer can do each second:\vspace{8pt}
+\\
+\hspace{10mm}$2000^3 / 109 = 73394495$ operations per second\vspace{8pt}
+\\
+Then, using the complexities we found for each algorithm, we could solve for n using a time restraint of one hour,  and the operations per second found above:\\
+\begin{itemize}
+\item Algorithm 1: $n=6400$
+\item Algorithm 2: $n=514023$
+\item Algorithm 3: $n=8.02*10^9$
+\item Algorithm 4: $n=2.64*10^{11}$
+\end{itemize}
 
 \end{document}
