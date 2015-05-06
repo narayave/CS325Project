@@ -1,0 +1,66 @@
+-- Divide and Conquer --
+
+Define changeslow(currency[], amount)    // currency = array of coin denominations
+										 //	amount = int, total amount we're making change for
+
+	if amount == 0, return // we don't need to make change for a 0 amount	
+
+	tmpResult1 = new int[currency.length]
+	tmpResult2 = new int[currency.length]
+   
+	for i to currency.length
+
+		if currency[i] <= amount
+             tmpResult2[i] = changeslow(amount - currency[i], currency)  // Use coin currency[i] as last coin
+             tmpResult1[i] = tmpResult2[i] + 1    // Solution to make change for amount  
+
+	finalResult = -1
+
+	for i to currency.length
+		if tmpResult1[i] >= 0 			// Don't use -1 values
+			if finalResult == -1 OR tmpResult1[i] < finalResult 
+				finalResult = tmpResult1[i]
+
+	return(finalResult)   // Return best solution
+	
+==========================================================================================
+==========================================================================================
+-- Greedy --
+
+Define changegreedy (currency[], amount) // currency = array of coin denominations
+										 //	amount = int, total amount we're making change for
+
+	int num
+	
+	for i to currency.length
+		
+		if currency[i] <= amount
+			num = amount / currency[i]
+			numArray[i] = numArray[i] + num
+			total = total + num
+			amount -= num * currency[i]
+	
+	numArray.append(total)  # sending the total through on the end of the array
+							# then we'll strip it off in the main function
+	return numArray
+
+
+
+
+
+==========================================================================================
+==========================================================================================
+-- Dynamic Programming --
+
+Define changedp (currency[], amount)
+
+	table[][] = 1 // initialize table that we'll use to store results in
+
+	for i to amount+1
+		for j to currency.length
+			if i + currency[j] <= amount
+				table[i+currency[j]][j] += table[i][j]
+			table[i][j+1] += table[i][j]
+			
+	return table[amount]
+		
