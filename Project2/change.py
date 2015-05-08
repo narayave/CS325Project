@@ -61,11 +61,6 @@ def changedp(currency, amount):
 
 	for i in range(0,amount + 1):
 		for j in range(0,len(currency)):
-			if i is 0:
-				table[i][j] = 1
-			elif(j is 0):
-				table[i][j] = 0
-
 			if ((i + currency[j]) <= amount):
 				table[i + currency[j]][j] += table[i][j]
 			table[i][j + 1] += table[i][j]
