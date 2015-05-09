@@ -88,7 +88,7 @@ def changegreedy(currency, amount):
 
 
 ### does not work ###
-def changedp(currency, amount):
+def changedp_old(currency, amount):
 	table = [[0 for x in range(amount+1)] for x in range(amount+1)]
 	table[0][0] = 1
 
@@ -99,6 +99,54 @@ def changedp(currency, amount):
 			table[i][j + 1] += table[i][j]
 
 	return table[amount]
+	
+
+#### THIS WORKS!!! ####
+# taken from https://github.com/konopaz/CS325_Proj2/blob/59d52f898017984610486743d0d1a5187f0bf2e8/change.py
+def changedp(coins, amount, change = None, table = None):
+
+  if change == None:
+    change = []
+    for i in range(0, len(coins)):
+      change.append(0)
+
+  if table == None:
+    table = {}
+    table[0] = []
+    for i in range(0, len(coins)):
+      table[0].append(0)
+
+  if table.has_key(amount):
+    return table[amount]
+
+  try:
+
+    idx = coins.index(amount)
+    change[idx] = change[idx] + 1
+
+  except ValueError:
+
+    tmpCoins = None
+
+    for i in range(1, amount):
+
+        iChange = changedp(coins, i, None, table)
+        kMinusIChange = changedp(coins, amount - i, None, table)
+
+        tmpCoins2 = 0
+        tmpChange = []
+
+        for i in range(0, len(iChange)):
+          tmpCoins2 = tmpCoins2 + iChange[i]
+          tmpCoins2 = tmpCoins2 + kMinusIChange[i]
+          tmpChange.append(iChange[i] + kMinusIChange[i])
+
+        if tmpCoins == None or tmpCoins2 < tmpCoins:
+          tmpCoins = tmpCoins2
+          change = tmpChange
+
+  table[amount] = change
+  return change
 
 
 def getResultFileName(name):
