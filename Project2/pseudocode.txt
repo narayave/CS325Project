@@ -1,27 +1,30 @@
 -- Divide and Conquer --
 
-Define changeslow(currency[], amount)    // currency = array of coin denominations
+Define changeslowhelper(currency[], amount)    // currency = array of coin denominations
 										 //	amount = int, total amount we're making change for
-
-	if amount == 0, return // we don't need to make change for a 0 amount	
-
-	tmpResult1 = new int[currency.length]
-	tmpResult2 = new int[currency.length]
-   
-	for i to currency.length
-
-		if currency[i] <= amount
-             tmpResult2[i] = changeslow(amount - currency[i], currency)  // Use coin currency[i] as last coin
-             tmpResult1[i] = tmpResult2[i] + 1    // Solution to make change for amount  
-
-	finalResult = -1
-
-	for i to currency.length
-		if tmpResult1[i] >= 0 			// Don't use -1 values
-			if finalResult == -1 OR tmpResult1[i] < finalResult 
-				finalResult = tmpResult1[i]
-
-	return(finalResult)   // Return best solution
+	if amount == 0
+		return 0
+	for each coin in currency
+		if coin == amount
+			return [coin]
+			
+	for i to amount/2
+		temp.extend(changeslowhelper(currency, i))
+		temp.extend(changeslowhelper(currency, amount - 1))
+		numCoins = length of temp
+		
+		if numCoins < minCoins
+			coins = temp
+	
+	return coins
+	
+Define changeslow(currency[], amount)
+	coins = changeslowhelper(currency[], amount)
+	
+	for each coin in currency
+		result.append(coins.count(coin))
+	
+	return result
 	
 ==========================================================================================
 ==========================================================================================
