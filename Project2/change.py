@@ -105,35 +105,57 @@ def getResultFileName(name):
 	return name[:-4] + "change.txt"
 
 if __name__ == '__main__':
+	currencies = []
+	ammounts = []
+
+	inFile = open(sys.argv[1], "r")
+	while 1:
+		line = inFile.readline()
+		if line:
+			line = line.replace('[', '')
+			line = line.replace(']', '')
+			tempArray = line.split(',')
+			temp2 = []
+			for x in tempArray:
+				temp2.append(int(x))
+
+			currencies.append(temp2)
+
+			line = inFile.readline()
+			ammounts.append(int(line))
+		else:
+			break
+
+	inFile.close()
 
 	resultFileName = getResultFileName(sys.argv[1])
 	resultFile = open(resultFileName, "w")
 
-	currency = [1, 7, 26]
-	currency = sorted(currency)
-	amount = 22
 
+	for i in range(0, len(currencies)):
+		currency = sorted(currencies[i])
+		amount = ammounts[i]
 
-	print "slow..."
-	slowStart = time.clock()
-	slowArray = changeslow(currency, amount)
-	slowEnd = time.clock()
-	time1 = slowEnd - slowStart
+		print "slow..."
+		slowStart = time.clock()
+		slowArray = changeslow(currency, amount)
+		slowEnd = time.clock()
+		time1 = slowEnd - slowStart
 
-	print "greedy..."
-	greedyStart = time.clock()
-	greedyArray = changegreedy(currency, amount)
-	greedyEnd = time.clock()
-	time2 = greedyEnd - greedyStart
+		print "greedy..."
+		greedyStart = time.clock()
+		greedyArray = changegreedy(currency, amount)
+		greedyEnd = time.clock()
+		time2 = greedyEnd - greedyStart
 
-	print "DP..."
-	dpStart = time.clock()
-	dpArray = changedp(currency, amount)
-	dpEnd = time.clock()
-	time3 = dpEnd - dpStart
+		print "DP..."
+		dpStart = time.clock()
+		dpArray = changedp(currency, amount)
+		dpEnd = time.clock()
+		time3 = dpEnd - dpStart
 
-	print "\n\n"
-	PrintResults (resultFile, slowArray, greedyArray, dpArray, currency, amount, time1, time2, time3)
+		print "\n\n"
+		PrintResults (resultFile, slowArray, greedyArray, dpArray, currency, amount, time1, time2, time3)
 
 	print '*********** Finished ***********'
 	print "Note: These results can be found in " + resultFileName
