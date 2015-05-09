@@ -1,0 +1,61 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{anysize}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{chngpage}
+\usepackage{enumerate}
+\hypersetup{
+	colorlinks=true, 
+	linkcolor=blue, 
+	urlcolor=blue, 
+	pdfnewwindow=true, 
+	citecolor=black
+}
+\urlstyle{same}
+\linespread{1.2}
+
+\begin{document}
+
+\begin{titlepage}
+    \vspace*{4cm}
+    \begin{flushright}
+    {\huge
+        Project 2\\[5mm]
+    }
+    {\large
+        CS325 | Spring 2015
+     }
+    \end{flushright}
+\hrule
+    \begin{flushright}
+	by Group 2\\
+	Vedanth Narayanan\\
+	Jonathan Merrill\\
+	Tracie Lee\\
+    \vfill
+	\today\\
+    \end{flushright}
+\end{titlepage}
+
+\raggedright
+
+\section*{Dynamic Programming Table}
+
+\section*{Algorithm Pseudocode}
+
+\section*{Dynamic Programming Induction Proof}
+
+\section*{Questions}
+\begin{enumerate}
+	\item Suppose V = [1, 5, 10, 25, 50]. For each integer value of A in [2010, 2015, 2020, …, 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run the other algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?
+	\item Suppose V1 = [1, 2, 6, 12, 24, 48, 60] and V2 = [1, 6, 13, 37, 150]. For each integer value of A in [2000, 2001, 2002, …, 2200] determine the number of coins that changegreedy and changedp requires. If your algorithms run too fast try [10000, 10001, 10003, …, 10100]. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run all three algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?
+	\item Suppose V = [1, 2, 4, 6, 8, 10, 12, …, 30]. For each integer value of A in [2000, 2001, 2002, …, 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run all three algorithms on the values. Plot the number of coins as a function of A for each algorithm.
+	\item For the above situations, determine (experimentally) the running times of the algorithms by fitting trend lines to the data or analyzing the log-log plot. Graph the running time as a function of A. Compare the running times of the different algorithms.
+	\item Use the data from questions 4-6 and any new data you have generated. Plot running times as a function of number of denominations (i.e. V=[1, 10, 25, 50] has four different denominations so n=4). Does the size of n influence the running times of any of the algorithms?
+	\item Suppose you are living in a country where coins have values that are powers of p, V = [$p^0$, $p^1$, $p^2$, ... , $p^n$]. How do you think the dynamic programming and greedy approaches would compare? Explain.
+\end{enumerate}
+
+\end{document}

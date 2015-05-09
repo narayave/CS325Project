@@ -193,3 +193,7 @@ Project1/*.aux
 Project1/*.synctex.gz
 Project1/*.log
 Project1/*.out
+*.pyproj
+*.aux
+*.gz
+Project2/ReportDoc/finalReport.out
