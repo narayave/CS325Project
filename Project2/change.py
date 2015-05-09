@@ -6,6 +6,40 @@ import time
 import csv
 import random
 
+
+def PrintResults(slowArray, greedyArray, dpArray, currency, amount, time1, time2, time3):
+
+	slowNum = slowArray.pop(-1)
+	greedyNum = greedyArray.pop(-1)  #pulling the total off of the end
+	dpNum = dpArray.pop(-1)
+	
+	f = open("Amountchange.txt","w")
+	f.write("Original Array: " + str(currency) + "\n")
+	f.write("Amount: " + str(amount) + "\n")
+ 	f.write("Slow Array:     " + str(slowArray) + "\n")
+ 	f.write(str(slowNum) + "\n")
+	f.write("Greedy Array:   " + str(greedyArray) + "\n")
+	f.write(str(greedyNum) + "\n")
+ 	f.write("DP Array:       " + str(dpArray) + "\n")
+ 	f.write(str(dpNum) + "\n")
+	f.write("======= Times =======" + "\n")
+ 	f.write("Slow:   " + str(time1) + "\n")
+	f.write("Greedy: " + str(time2) + "\n")
+ 	f.write("DP:     " + str(time3) + "\n")
+
+	print "Currency Array: " + str(currency)
+	print "Amount:         " + str(amount)
+ 	print "Slow Array:     " + str(slowArray)
+ 	print "Slow Total:     " + str(slowNum)
+	print "Greedy Array:   " + str(greedyArray)
+	print "Greedy Total:   " + str(greedyNum)
+ 	print "DP Array:       " + str(dpArray)
+ 	print "DP Total:       " + str(dpNum)
+	print "======= Times =======\n"
+ 	print "Slow:   " + str(time1) + "\n"
+	print "Greedy time: " + str(time2) + "\n"
+ 	print "DP:     " + str(time3) + "\n\n\n"
+
 ### does not work, caught in forever loop ###
 def changeslow(currency, amount):
 	print 'Slowly working...'
@@ -65,14 +99,13 @@ def changedp(currency, amount):
 				table[i + currency[j]][j] += table[i][j]
 			table[i][j + 1] += table[i][j]
 
-	print (table[amount])
 	print 'Finished changedp'
 	return table[amount]
 
 if __name__ == '__main__':
 
 	currency = [20,10,5,1]
-	amount = 72
+	amount = 20700
 
 # 	try:
 # 		foo = open(sys.argv[1], 'r')
@@ -115,26 +148,22 @@ if __name__ == '__main__':
 #
 
 	
-	#slowStart = time.clock()
-	#changeslow(currency, amount)
-	#slowEnd = time.clock()
-	#time1 = slowEnd - slowStart
+	slowStart = time.clock()
+	changeslow(currency, amount)
+	slowEnd = time.clock()
+	time1 = slowEnd - slowStart
 
 	greedyStart = time.clock()
 	greedyArray = changegreedy(currency, amount)
 	greedyEnd = time.clock()
 	time2 = greedyEnd - greedyStart
-	greedyNum = greedyArray.pop(-1)  #pulling the total off of the end
 
 	dpStart = time.clock()
 	changedp(currency, amount)
 	dpEnd = time.clock()
 	time3 = dpEnd - dpStart
-
-	print 'inputArray: ' + str(currency)
-	print 'inputAmount: ' + str(amount)	
-	print 'greedyArray: ' + str(greedyArray)
-	print 'greedyNum: ' + str(greedyNum)
+	
+	PrintResults (slowArray, greedyArray, dpArray, currency, amount, time1, time2, time3)
 
 	print '*********** Finished ***********'
 	print "Note: These results can be found in Amountchange.txt"

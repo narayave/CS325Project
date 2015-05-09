@@ -1,0 +1,6 @@
+Original Array: [20, 10, 5, 1]
+Amount: 2000700
+Greedy Array:   [100035, 0, 0, 0]
+100035
+======= Times =======
+Greedy: 4.8e-05
