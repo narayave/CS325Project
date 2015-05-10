@@ -99,7 +99,7 @@ def changedp_old(currency, amount):
 			table[i][j + 1] += table[i][j]
 
 	return table[amount]
-	
+
 
 #### THIS WORKS!!! ####
 # taken from https://github.com/konopaz/CS325_Proj2/blob/59d52f898017984610486743d0d1a5187f0bf2e8/change.py
@@ -184,11 +184,16 @@ if __name__ == '__main__':
 		currency = sorted(currencies[i])
 		amount = ammounts[i]
 
-		print "slow..."
-		slowStart = time.clock()
-		slowArray = changeslow(currency, amount)
-		slowEnd = time.clock()
-		time1 = slowEnd - slowStart
+		if amount < 32:
+			print "slow..."
+			slowStart = time.clock()
+			slowArray = changeslow(currency, amount)
+			slowEnd = time.clock()
+			time1 = slowEnd - slowStart
+		else:
+			print "Not running changeslow, amount too large. Must be less than 32"
+			slowArray = ["NOT RUN - Amount must be less than 32", "NOT RUN - Amount must be less than 32"]
+			time1 = "NOT RUN - Amount must be less than 32"
 
 		print "greedy..."
 		greedyStart = time.clock()
