@@ -105,9 +105,7 @@ def changedp(currency,amount):
 				elif 1 + minArray[j - currency[i]] < min:
 					min = 1 + minArray[j - currency[i]]
 					coin = i
-		#C[p] = min
 		minArray.append(min)
-		#S[p] = coin
 		firstCoinArray.append(coin)
 
 	coins = []
