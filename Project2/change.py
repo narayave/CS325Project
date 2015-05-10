@@ -90,66 +90,40 @@ def changegreedy(currency, amount):
 	return numArray
 
 
-### does not work ###
-def changedp_old(currency, amount):
-	table = [[0 for x in range(amount+1)] for x in range(amount+1)]
-	table[0][0] = 1
+def changedp(currency,amount):
+	minArray = [0]
+	firstCoinArray = [0]
+	coin = 0
 
-	for i in range(0,amount + 1):
-		for j in range(0,len(currency)):
-			if ((i + currency[j]) <= amount):
-				table[i + currency[j]][j] += table[i][j]
-			table[i][j + 1] += table[i][j]
+	for j in range(1, amount+1):
+		min = -1
+		for i in range(0, len(currency)):
+			if currency[i] <= j:
+				if min == -1:
+					min = 1 + minArray[j - currency[i]]
+					coin = i
+				elif 1 + minArray[j - currency[i]] < min:
+					min = 1 + minArray[j - currency[i]]
+					coin = i
+		#C[p] = min
+		minArray.append(min)
+		#S[p] = coin
+		firstCoinArray.append(coin)
 
-	return table[amount]
+	coins = []
+	while amount > 0:
+		coins.append(currency[firstCoinArray[amount]])
+		amount = amount - currency[firstCoinArray[amount]]
 
+	numCoins = len(coins)
 
-#### THIS WORKS!!! ####
-# taken from https://github.com/konopaz/CS325_Proj2/blob/59d52f898017984610486743d0d1a5187f0bf2e8/change.py
-def changedp(coins, amount, change = None, table = None):
+	result = []
+	for coin in currency:
+		result.append(coins.count(coin))
 
-  if change == None:
-    change = []
-    for i in range(0, len(coins)):
-      change.append(0)
+	result.append(numCoins)
 
-  if table == None:
-    table = {}
-    table[0] = []
-    for i in range(0, len(coins)):
-      table[0].append(0)
-
-  if table.has_key(amount):
-    return table[amount]
-
-  try:
-
-    idx = coins.index(amount)
-    change[idx] = change[idx] + 1
-
-  except ValueError:
-
-    tmpCoins = None
-
-    for i in range(1, amount):
-
-        iChange = changedp(coins, i, None, table)
-        kMinusIChange = changedp(coins, amount - i, None, table)
-
-        tmpCoins2 = 0
-        tmpChange = []
-
-        for i in range(0, len(iChange)):
-          tmpCoins2 = tmpCoins2 + iChange[i]
-          tmpCoins2 = tmpCoins2 + kMinusIChange[i]
-          tmpChange.append(iChange[i] + kMinusIChange[i])
-
-        if tmpCoins == None or tmpCoins2 < tmpCoins:
-          tmpCoins = tmpCoins2
-          change = tmpChange
-
-  table[amount] = change
-  return change
+	return result
 
 
 def getResultFileName(name):
