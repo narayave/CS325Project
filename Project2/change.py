@@ -15,23 +15,26 @@ def PrintResults(resultFile, slowArray, greedyArray, dpArray, currency, amount, 
 
 	resultFile.write("Slow Array:   " + str(slowArray) + "\n")
 	resultFile.write("Slow Total:   " + str(slowNum) + "\n")
+	resultFile.write("Slow Time:    " + str(time1) + "\n")
 	resultFile.write("Greedy Array: " + str(greedyArray) + "\n")
 	resultFile.write("Greedy Total: " + str(greedyNum) + "\n")
+	resultFile.write("Greedy Time:  " + str(time2) + "\n")
 	resultFile.write("DP Array:     " + str(dpArray) + "\n")
-	resultFile.write("DP Total:     " + str(dpNum) + "\n\n")
+	resultFile.write("DP Total:     " + str(dpNum) + "\n")
+	resultFile.write("DP Time:      " + str(time3) + "\n\n")
 
 	print "Currency Array: " + str(currency)
 	print "Amount:         " + str(amount)
- 	print "Slow Array:     " + str(slowArray)
- 	print "Slow Total:     " + str(slowNum)
+	print "Slow Array:     " + str(slowArray)
+	print "Slow Total:     " + str(slowNum)
 	print "Greedy Array:   " + str(greedyArray)
 	print "Greedy Total:   " + str(greedyNum)
- 	print "DP Array:       " + str(dpArray)
- 	print "DP Total:       " + str(dpNum)
+	print "DP Array:       " + str(dpArray)
+	print "DP Total:       " + str(dpNum)
 	print "======= Times =======\n"
- 	print "Slow:   " + str(time1) + "\n"
+	print "Slow:   " + str(time1) + "\n"
 	print "Greedy time: " + str(time2) + "\n"
- 	print "DP:     " + str(time3) + "\n\n\n"
+	print "DP:     " + str(time3) + "\n\n\n"
 
 
 def changeslowhelper(currency, amount):

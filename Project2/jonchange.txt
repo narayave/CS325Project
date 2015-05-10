@@ -1,0 +1,390 @@
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 0, 40]
+Greedy Total: 41
+Greedy Time:  1.87153539556e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 0, 40]
+Greedy Total: 42
+Greedy Time:  2.53562860044e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 0, 40]
+Greedy Total: 42
+Greedy Time:  1.81116328603e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 1, 40]
+Greedy Total: 41
+Greedy Time:  5.13162931042e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 1, 40]
+Greedy Total: 42
+Greedy Time:  4.89014087228e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 1, 40]
+Greedy Total: 42
+Greedy Time:  1.81116328603e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 1, 40]
+Greedy Total: 43
+Greedy Time:  2.71674492904e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 1, 40]
+Greedy Total: 43
+Greedy Time:  1.56967484789e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 0, 41]
+Greedy Total: 41
+Greedy Time:  1.99227961463e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 0, 41]
+Greedy Total: 42
+Greedy Time:  1.56967484789e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 0, 41]
+Greedy Total: 42
+Greedy Time:  1.50930273836e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 0, 41]
+Greedy Total: 43
+Greedy Time:  1.32818640975e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 0, 41]
+Greedy Total: 43
+Greedy Time:  1.56967484789e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 1, 41]
+Greedy Total: 42
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 1, 41]
+Greedy Total: 43
+Greedy Time:  1.99227961463e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 1, 41]
+Greedy Total: 43
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 1, 41]
+Greedy Total: 44
+Greedy Time:  1.75079117649e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 1, 41]
+Greedy Total: 44
+Greedy Time:  1.26781430022e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 0, 42]
+Greedy Total: 42
+Greedy Time:  1.44893062882e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 0, 42]
+Greedy Total: 43
+Greedy Time:  1.44893062882e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 0, 42]
+Greedy Total: 43
+Greedy Time:  1.69041906696e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 0, 42]
+Greedy Total: 44
+Greedy Time:  1.26781430022e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 0, 42]
+Greedy Total: 44
+Greedy Time:  1.9319075051e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 1, 42]
+Greedy Total: 43
+Greedy Time:  1.32818640976e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 1, 42]
+Greedy Total: 44
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 1, 42]
+Greedy Total: 44
+Greedy Time:  1.50930273836e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 1, 42]
+Greedy Total: 45
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 1, 42]
+Greedy Total: 45
+Greedy Time:  1.32818640976e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 0, 43]
+Greedy Total: 43
+Greedy Time:  1.7507911765e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 0, 43]
+Greedy Total: 44
+Greedy Time:  1.38855851929e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 0, 43]
+Greedy Total: 44
+Greedy Time:  1.32818640976e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 0, 43]
+Greedy Total: 45
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 0, 43]
+Greedy Total: 45
+Greedy Time:  1.69041906696e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 1, 43]
+Greedy Total: 44
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 0, 1, 43]
+Greedy Total: 45
+Greedy Time:  1.26781430022e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 1, 1, 43]
+Greedy Total: 45
+Greedy Time:  1.50930273836e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 1, 1, 1, 43]
+Greedy Total: 46
+Greedy Time:  1.38855851929e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 2, 1, 43]
+Greedy Total: 46
+Greedy Time:  1.63004695743e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
+Slow Array:   ['NOT RUN - Amount must be less than 32']
+Slow Total:   NOT RUN - Amount must be less than 32
+Slow Time:    NOT RUN - Amount must be less than 32
+Greedy Array: [0, 0, 0, 0, 44]
+Greedy Total: 44
+Greedy Time:  1.20744219069e-05
+DP Array:     ['sdf']
+DP Total:     asa
+DP Time:      0
+
