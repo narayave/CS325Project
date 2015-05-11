@@ -42,9 +42,9 @@
 
 \raggedright
 
-\section*{Dynamic Programming Table}
-
-\section*{Algorithm Pseudocode}
+\section{Dynamic Programming Table}
+Starting with i = 0 and incrementing to the amount of change passed in, we fill in the table with the minimum number of coins needed to make i cents. As i increases, we use previous smaller values that are stored in the table to compute the minimum number of coin for i cents. By building the table from the smallest values to the largest, we can reuse the work to find optimal numbers of coins for each iteration until we eventually get to the value passed in. 
+\section{Algorithm Pseudocode}
 \begin{verbatim}
 -- Divide and Conquer --
 
@@ -100,11 +100,30 @@ Define changegreedy (currency[], amount)
 -- Dynamic Programming --
 
 Define changedp (currency[], amount)
+    table[0] = 0
+    table2[0] = 0
+    for j from 1 to amount 
+        for i from 0 to len(currency)
+            if currency[i] <= j
+                min = 1 + table[j - currency[i]]
+                coin = i
+        append min to table
+        append coin to table2
 
+    coins = []
+    while amount > 0
+        append table2[amount] to result
+        decrement amount by table2[amount]
+	
+    result = []
+    for each coin in currency
+	    append the number of each coin in coins to result
+		
+    return result
 
 \end{verbatim}
 
-\section*{Dynamic Programming Induction Proof}
+\section{Dynamic Programming Induction Proof}
 	Proof by Induction:
 \begin{itemize}
 	\item \textbf{Base Case}\\
@@ -119,28 +138,28 @@ Define changedp (currency[], amount)
 	\hspace{30pt}T[k+1] = T[p] + 1; where p is some value less than or equal to k\\
 	Since we know T[p] is the correct number of coins used for p cents, T[k+1] must also be the correct number of coins used for k+1 cents.
 \end{itemize}	 
-\section*{Questions}
-\begin{enumerate}
-	\item Suppose V = [1, 5, 10, 25, 50]. For each integer value of A in [2010, 2015, 2020, ..., 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run the other algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?
-	\includegraphics[width=6in]{p4.png}
-	As you can see, both algorithms are identical in the results produced for V = [1,5,10,25,50].
-	\item Suppose V1 = [1, 2, 6, 12, 24, 48, 60] and V2 = [1, 6, 13, 37, 150]. For each integer value of A in [2000, 2001, 2002, ..., 2200] determine the number of coins that changegreedy and changedp requires. If your algorithms run too fast try [10000, 10001, 10003, ..., 10100]. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run all three algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?
+\section{Greedy and DP Algorithms for V = [1, 5, 10, 25, 50]}
+	\includegraphics[width=6in]{p4.png}\\
+	As you can see, both algorithms are identical in the results produced for V = [1,5,10,25,50].\\
+\section{Greedy and DP Algorithms for V = [1, 2, 6, 12, 24, 48, 60] and V = [1, 6, 13, 37, 150]}
 	\includegraphics[width=6in]{p5.png}\\
-	For some values in the Dynamic Programming algorithm, more minimized results are returned in comparison to the greedy algorithm. This is true for both V = [1, 2, 6, 12, 24, 48, 60] and V = [1, 6, 13, 37, 150].
-	\item Suppose V = [1, 2, 4, 6, 8, 10, 12, ..., 30]. For each integer value of A in [2000, 2001, 2002, ..., 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run all three algorithms on the values. Plot the number of coins as a function of A for each algorithm.
+	For some values in the Dynamic Programming algorithm, more minimized results are returned in comparison to the greedy algorithm. This is true for both V = [1, 2, 6, 12, 24, 48, 60] and V = [1, 6, 13, 37, 150].\\
+\section{Greedy and DP Algorithms for V = [1, 2, 4, 6, 8, 10, 12, ..., 30]}
 	\includegraphics[width=5.5in]{p6.png}\\
-	As you can see, both algorithms are identical in the results produced for V = [1, 2, 4, 6, 8, 10, 12, ..., 30].
-	\item For the above situations, determine (experimentally) the running times of the algorithms by fitting trend lines to the data or analyzing the log-log plot. Graph the running time as a function of A. Compare the running times of the different algorithms.\\
+	As you can see, both algorithms are identical in the results produced for V = [1, 2, 4, 6, 8, 10, 12, ..., 30].\\
+\section{Running Times for Greedy and DP Algorithms}
 	\textbf{Problem 4}\\
 	\hskip-1.0cm\includegraphics[width=6.5in]{p7-4.png}\\
 	\textbf{Problem 5}\\
 	\hskip-1.0cm\includegraphics[width=6.5in]{p7-5.png}\\
 	\textbf{Problem 6}\\
-	\hskip-1.0cm\includegraphics[width=6.5in]{p7-6.png}
+	\hskip-1.0cm\includegraphics[width=6.5in]{p7-6.png}\\
 	
-	
-	\item Use the data from questions 4-6 and any new data you have generated. Plot running times as a function of number of denominations (i.e. V=[1, 10, 25, 50] has four different denominations so n=4). Does the size of n influence the running times of any of the algorithms?
-	\item Suppose you are living in a country where coins have values that are powers of p, V = [$p^0$, $p^1$, $p^2$, ... , $p^n$]. How do you think the dynamic programming and greedy approaches would compare? Explain.
-\end{enumerate}
+\section{Running Times vs Number of Denominations for Greedy and DP Algorithms}
+	\hskip-1.0cm\includegraphics[width=6.5in]{p8.png}\\
+	The number of denominations (n) influences the running times of the two algorithms. The difference would be more prevalent with larger values for n.
+
+\section{Greedy vs DP for  V = [$p^0$, $p^1$, $p^2$, ... , $p^n$]}
+	The greedy algorithm will definitely operate faster because it looks for the largest element in V that it can subtract from A, where DP will check for all elements in V.
 
 \end{document}
