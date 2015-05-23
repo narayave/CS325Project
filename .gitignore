@@ -198,3 +198,4 @@ Project1/*.out
 *.gz
 Project2/ReportDoc/finalReport.out
 Project2/Change.sln
+*.out

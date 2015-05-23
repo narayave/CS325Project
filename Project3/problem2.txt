@@ -1,0 +1,155 @@
+// Need to check if I have done everything properly
+
+MIN 21 P1 + 16 P2 + 40 P3 + 41 P4 + 585 P5 + 120 P6 + 164 P7 + 884 P8
+ST
+	0.85 P1 + 1.62 P2 + 2.86 P3 + 0.93 P4 + 23.4 P5 + 16 P6 + 9 P7 > 14
+	0.33 P1 + 0.2 P2 + 0.39 P3 + 0.24 P4 + 15 P5 + 5 P6 + 2.6 P7 + 100 P8 > 1
+	0.33 P1 + 0.2 P2 + 0.39 P3 + 0.24 P4 + 15 P5 + 5 P6 + 2.6 P7 + 100 P8 < 9
+	4.64 P1 + 2.37 P2 +3.63 P3 + 9.58 P4 +15 P5 + 3 P6 + 27 P7 > 3
+	9 P1 + 28 P2 + 65 P3 + 69 P4 + 3.8 P5 + 120 P6 + 78 P7 < 201
+	P1 > 0
+	P2 > 0
+	P3 > 0
+	P4 > 0
+	P5 > 0
+	P6 > 0
+	P7 > 0
+	P8 > 0
+
+END
+
+
+
+
+ LP OPTIMUM FOUND AT STEP      3
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      105.6987
+
+  VARIABLE        VALUE          REDUCED COST
+        P1         0.000000          6.276346
+        P2         0.181488          0.000000
+        P3         0.000000         12.785481
+        P4         0.000000         16.499697
+        P5         0.000000        389.725952
+        P6         0.856624          0.000000
+        P7         0.000000         49.335754
+        P8         0.000000        884.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000         -7.150635
+        3)         3.319419          0.000000
+        4)         4.680581          0.000000
+        5)         0.000000         -1.863279
+        6)        93.123413          0.000000
+        7)         0.000000          0.000000
+        8)         0.181488          0.000000
+        9)         0.000000          0.000000
+       10)         0.000000          0.000000
+       11)         0.000000          0.000000
+       12)         0.856624          0.000000
+       13)         0.000000          0.000000
+       14)         0.000000          0.000000
+
+ NO. ITERATIONS=       3
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+       P1       21.000000         INFINITY         6.276346
+       P2       16.000000         2.894351         3.850000
+       P3       40.000000         INFINITY        12.785481
+       P4       41.000000         INFINITY        16.499699
+       P5      585.000000         INFINITY       389.725952
+       P6      120.000000        38.024689        37.710777
+       P7      164.000000         INFINITY        49.335754
+       P8      884.000000         INFINITY       884.000000
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2       14.000000         2.000000         9.754666
+        3        1.000000         3.319419         INFINITY
+        4        9.000000         INFINITY         4.680581
+        5        3.000000        12.139827         0.375000
+        6      201.000000         INFINITY        93.123413
+        7        0.000000         0.000000         INFINITY
+        8        0.000000         0.181488         INFINITY
+        9        0.000000         0.000000         INFINITY
+       10        0.000000         0.000000         INFINITY
+       11        0.000000         0.000000         INFINITY
+       12        0.000000         0.856624         INFINITY
+       13        0.000000         0.000000         INFINITY
+       14        0.000000         0.000000         INFINITY
+
+
+ LP OPTIMUM FOUND AT STEP      0
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      105.6987
+
+  VARIABLE        VALUE          REDUCED COST
+        P1         0.000000          6.276346
+        P2         0.181488          0.000000
+        P3         0.000000         12.785481
+        P4         0.000000         16.499697
+        P5         0.000000        389.725952
+        P6         0.856624          0.000000
+        P7         0.000000         49.335754
+        P8         0.000000        884.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000         -7.150635
+        3)         3.319419          0.000000
+        4)         4.680581          0.000000
+        5)         0.000000         -1.863279
+        6)        93.123413          0.000000
+        7)         0.000000          0.000000
+        8)         0.181488          0.000000
+        9)         0.000000          0.000000
+       10)         0.000000          0.000000
+       11)         0.000000          0.000000
+       12)         0.856624          0.000000
+       13)         0.000000          0.000000
+       14)         0.000000          0.000000
+
+ NO. ITERATIONS=       0
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+       P1       21.000000         INFINITY         6.276346
+       P2       16.000000         2.894351         3.850000
+       P3       40.000000         INFINITY        12.785481
+       P4       41.000000         INFINITY        16.499699
+       P5      585.000000         INFINITY       389.725952
+       P6      120.000000        38.024689        37.710777
+       P7      164.000000         INFINITY        49.335754
+       P8      884.000000         INFINITY       884.000000
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2       14.000000         2.000000         9.754666
+        3        1.000000         3.319419         INFINITY
+        4        9.000000         INFINITY         4.680581
+        5        3.000000        12.139827         0.375000
+        6      201.000000         INFINITY        93.123413
+        7        0.000000         0.000000         INFINITY
+        8        0.000000         0.181488         INFINITY
+        9        0.000000         0.000000         INFINITY
+       10        0.000000         0.000000         INFINITY
+       11        0.000000         0.000000         INFINITY
+       12        0.000000         0.856624         INFINITY
+       13        0.000000         0.000000         INFINITY
+       14        0.000000         0.000000         INFINITY
