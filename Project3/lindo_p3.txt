@@ -37,3 +37,23 @@ A0>0
 A1>0
 A2>0
 END
+
+
+code for alternate version that will produce the same line via all 3 methods
+MIN X + Y + Z
+ST
+	A0+A1+Z1>=2
+	A0+A1-Z1<=2
+	A0+A1+Z2>=3
+	A0+A1-Z2<=3
+	A0+A1+Z3>=4
+	A0+A1-Z3<=4
+	A0+7A1+Z8>=5
+	A0+7A1-Z8<=5
+	A0+7A1+Z9>=6
+	A0+7A1-Z9<=6
+	A0+7A1+Z10>=7
+	A0+7A1-Z10<=7
+A0>0
+A1>0
+END
