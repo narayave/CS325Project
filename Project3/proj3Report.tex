@@ -198,7 +198,7 @@ END
 
 \section{Regression Solution via Linear Programming}
 \subsection*{Part A}
-\textbf{Objective}: min $\sum\limits_{i=1}^n |y_i -  (a_1x_i + a_0)|$ as an LP.\vspace{8pt}
+\textbf{Objective}: min $\sum\limits_{i=1}^n |y_i -  (a_1x_i + a_0)|$\vspace{8pt}
 
 \textbf{Constraint Equations}
 
@@ -246,7 +246,7 @@ END
 \end{verbatim}
 
 \subsection*{Part B}
-\textbf{Objective}: min $max |y_i -  (a_1x_i + a_0)|$ as an LP.\vspace{8pt}
+\textbf{Objective}: min $max |y_i -  (a_1x_i + a_0)|$\vspace{8pt}
 
 \textbf{Constraint Equations}
 
@@ -294,7 +294,7 @@ END
 
 Intuitively, it is not immediately apparent that a non-linear dataset could exist that would produce the same line using all 3 methods, but after some thought and discussion a solution presented itself. Take the following dataset:\vspace{8pt}
 
-\hspace{20pt}(x,y) = { (1,2), (1, 3), (1, 4), (7, 5), (7,6), (7, 7) }\vspace{8pt}
+\hspace{20pt}(x,y) = \{ (1,2), (1, 3), (1, 4), (7, 5), (7,6), (7, 7) \}\vspace{8pt}
 
 Testing all 3 methods in Lindo produced the same regression equation: $y = 0.5x + 2.5$. Therefore, a dataset does exist that will yield the same line via all 3 methods.
 
