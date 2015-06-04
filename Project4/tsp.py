@@ -8,8 +8,7 @@ import time
 def getDistance(city1, city2):
 	dist1 = (city1[0]-city2[0])**2
 	dist2 = (city1[1]-city2[1])**2
-	distance = int(round(math.sqrt(dist1 + dist2),0))
-	return distance
+	return int(round(math.sqrt(dist1 + dist2),0))
 
 # find tour for starting city
 def getTour(start, cities):
@@ -20,11 +19,13 @@ def getTour(start, cities):
 	notVisited.remove(start)
 	tour.append(start)
 	currentCity = start
+	
+
 
 	# go while there are still cities to visit
 	while notVisited != []:
-		closest = (0, float("inf")) # big number, has to be a tuple
 		# find the closest city from the current of the unvisited
+		closest = (0, sys.maxint)
 		for city in notVisited:
 			distance = getDistance(cities[currentCity], cities[city])
 			if distance < closest[1]:
@@ -71,10 +72,12 @@ if __name__ == "__main__":
 	print "Total time: " + str(timeTotal) + " seconds"
 	print "Best path distance: " + str(bestTour[1]) + "\n"
 
-	outFile = open(inFile + ".tour", "w")
+	#outFile = open(inFile + ".tour", "w")
+	outFile = open("result_" + inFile, "w")
+
 	outFile.write(str(bestTour[1]) + "\n")
 
-	for city in bestTour[0]:
-		outFile.write(str(city) + "\n")
+	for j in bestTour[0]:
+		outFile.write(str(j) + "\n")
 	outFile.close()
 
