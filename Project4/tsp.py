@@ -69,12 +69,11 @@ if __name__ == "__main__":
 	timeEnd = time.clock()
 	timeTotal = timeEnd - timeStart
 
+	# need to comment these 2 lines out when turning in
 	print "Total time: " + str(timeTotal) + " seconds"
 	print "Best path distance: " + str(bestTour[1]) + "\n"
 
-	#outFile = open(inFile + ".tour", "w")
-	outFile = open("result_" + inFile, "w")
-
+	outFile = open(inFile + ".tour", "w")
 	outFile.write(str(bestTour[1]) + "\n")
 
 	for j in bestTour[0]:
