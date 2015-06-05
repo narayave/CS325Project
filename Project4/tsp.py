@@ -4,8 +4,9 @@ import math
 import time
 
 
-# calculate the distance between city1 & city2 using the pythagorean theorem
+# helper function to calculate the distance between city1 & city2
 def getDistance(city1, city2):
+	# tried this initially with pow - it works, but it's slower
 	dist1 = (city1[0]-city2[0])**2
 	dist2 = (city1[1]-city2[1])**2
 	return int(round(math.sqrt(dist1 + dist2),0))
@@ -19,8 +20,6 @@ def getTour(start, cities):
 	notVisited.remove(start)
 	tour.append(start)
 	currentCity = start
-	
-
 
 	# go while there are still cities to visit
 	while notVisited != []:
@@ -50,7 +49,9 @@ if __name__ == "__main__":
 		line = f.readline()
 		if line:
 			data = line.strip("\n\r").split()
-			# add city to dictionary as {city: (x, y)}
+			# adds each city's coordinates to a dictionary as {(x, y)}
+			# the index of the dictionary correlates to the key of the city 
+			#     that is the first number column in the text doc which is not added
 			cities[int(data[0])] = (int(data[1]), int(data[2]))
 		else:
 			break
@@ -69,13 +70,12 @@ if __name__ == "__main__":
 	timeEnd = time.clock()
 	timeTotal = timeEnd - timeStart
 
-	# need to comment these 2 lines out when turning in
+	# need to comment these 2 print lines out when turning in
 	print "Total time: " + str(timeTotal) + " seconds"
 	print "Best path distance: " + str(bestTour[1]) + "\n"
 
 	outFile = open(inFile + ".tour", "w")
 	outFile.write(str(bestTour[1]) + "\n")
-
 	for j in bestTour[0]:
 		outFile.write(str(j) + "\n")
 	outFile.close()
