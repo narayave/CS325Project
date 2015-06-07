@@ -1,0 +1,67 @@
+test cases:
+	test1:
+		0.28 seconds
+		130921 distance
+
+	test2:
+		12.81 seconds	
+		2975 distance
+
+	test3 (hour timeout):
+		2128.80 seconds
+		1934200 distance
+
+
+
+competition:
+	1:
+		FULL RUN:
+			0.08 seconds
+			5911 distance
+		COMPETITION:
+			same as above
+
+	2:
+		FULL RUN:
+			0.6 seconds
+			8011 distance
+		COMPETITION:
+			same as above
+	
+	3:
+		FULL RUN:
+			9.26 seconds
+			14826 distance
+		COMPETITION:
+			same as above
+
+	4:
+		FULL RUN:
+			75.23 seconds
+			19711 distance
+		COMPETITION:
+			same as above
+
+	5:
+		FULL RUN :
+			629.97 seconds
+			27128 distance
+		COMPETITION:
+			299.75 seconds
+			27128 distance
+
+	6:
+		FULL RUN (30 min timeout):
+			1798.9 seconds
+			39469 distance
+		COMPETITION:
+			298.29 seconds
+			39834 distance
+
+	7:
+		FULL RUN (30 min timeout):
+			1793.51 seconds
+			61972 distance
+		COMPETITION:
+			291.09 seconds
+			62496 distance
