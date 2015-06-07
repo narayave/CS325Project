@@ -43,15 +43,15 @@
 \raggedright
 
 \section*{Ideas behind the algorithm}
-There was a lot of research we did before even coming close to figure out what we wanted to implement. The single algorithm that was universally praised was Christofides' Algorithm. To succinctly explain, it starts out by creating a minimum spanning tree (MST). The next step is trying to figure out the nodes that have an odd number of edges. Now short cuts need to be created, so there are no vertex has any odd number of edges. A Euler path needs to be found now. Without an Euler path, not all edges can be traversed atleast once. This sets us up so we can properly traverse the graph using shortcuts we created, and being able skip over vertices as they seem appropriate. It has been mentioned that Christophides' algorithm is probably one of the best as of now. It is "guaranteed to be at most 50 percent longer than the shortest route," as Erica Klarreich mentions in her Wired article, "Computer Scientists find new shortcuts for infamous Traveling Salesman Problem."\\
-We definitely were not able to implement this algorithm. Our algorithm did incorporate ideas from Christofides' Algorithm though. The Algorithm that we ended up implemented starts off by implementing an MST. But as this is being built, necessary shortcuts are produced. Building the MST happens by comparing the distances from a current vertex and basically all other vertices to find the next closest one. This continually happens until shortcuts need to be created and what not. The final tour starts at the last city and back to the vertex we started at. Because the vertex checks exist, some may call this the brute force method. We know for a fact that since this method is followed, we will get a very accurate answer. It may not take the most optimized path, but it will come close. While Chritofides' algorithm involves some revision, ours just performs the checks it needs to as it builds the tour.\\
+There was a lot of research we did before figuring out what we wanted to implement. The single algorithm that was universally praised was Christofides' Algorithm. To succinctly explain, it starts out by creating a minimum spanning tree (MST). The next step is trying to figure out the nodes that have an odd number of edges. Now short cuts need to be created, so there are no vertex has any odd number of edges. A Euler path needs to be found now. Without an Euler path, not all edges can be traversed at least once. This sets us up so we can properly traverse the graph using shortcuts we created, and being able skip over vertices as they seem appropriate. It has been mentioned that Christofides' algorithm is probably one of the best as of now. It is "guaranteed to be at most 50 percent longer than the shortest route," as Erica Klarreich mentions in her Wired article, "Computer Scientists find new shortcuts for infamous Traveling Salesman Problem."\vspace{8pt}
+
+While we were not able to implement a strict interpretation of Christofides' Algorithm, we were inspired by some of the its elements. To explain our algorithm, we start with a list of cities that our salesman needs to visit and the corresponding x and y coordinates for each city. We iterate through the list of cities in a for-loop, and use each city in the list as a starting point for a cycle. We then use an inner loop to traverse through the list beginning at that starting city. We iterate through the list, finding the closest city to the starting city, then finding the closest city to that city and so on, working through the map finding the closest node to the current node for the current iteration of the loop. We then use a shortcut to end up back at the starting city once the inner loop has completed the cycle. As the inner loop is traversing the list and finding closest nodes, it keeps track of the overall distance of the current cycle. We also keep track of which cities have been visited by removing each city that we have found from the ?unVisitedCities? list and appending each city found to a new list that represents the cycle beginning at the current starting city.  Finally, the inner loop returns a tuple that contains a list of the cities in the current cycle as well as the total distance for that cycle. When the outer loop completes, it returns a tuple that contains a list of cycles and each corresponding distance.\vspace{8pt}
+
+\section*{``Best'' Tours}
+The ``best'' tours for the three example instances and the time it took to obtain these tours.
+
+\section*{Results}
 While implementing this algorithm, we drew out little test cases by hand and performed some tests to make sure that it was working it should be. This really helped us out in understanding what we were trying to do. The inputs may just be numbers, but having a visual representation to go along with it helped us with not only understanding what we were trying to implement, but if we were doing a good job of it.
-
-\section*{"Best" Tours}
-The "best" tours for the three example instances and the time it took to obtain these tours.
-
-\section*{Best Tours for the Competition Instances}
-Are we taking part in the competition? If we win, we will get extra credit. Winky face.
 
 \section*{References}
 \begin{itemize}
@@ -63,17 +63,5 @@ Are we taking part in the competition? If we win, we will get extra credit. Wink
 	\item http://www.seas.gwu.edu/~simhaweb/champalg/tsp/tsp.html
 	\item http://web.stanford.edu/~saberi/tsp.pdf
 \end{itemize}
-
-\section*{Check List - Should delete this part in the end}
-\begin{itemize}
-	\item Does your program correctly compute tour lengths for simple cases?
-	\item Does your program read input files and options from the command line?
-	\item Does your program meet the output specifications?
-	\item Did you check that you produce solutions that verify correctly?
-	\item Did you find solutions to the example instances?
-	\item Did you find solutions to the competition instances? Include a summary of these results.
-	\item Does your code compile/run without issue according to your documentation?
-\end{itemize}
-
 
 \end{document}
